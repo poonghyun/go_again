@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
 	attr_reader :password
 
+	after_initialize :ensure_session_token
+
 	def password=(val)
 		@password = val
 		self.password_digest = BCrypt::Password.create(val)
