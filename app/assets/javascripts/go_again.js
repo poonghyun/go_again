@@ -4,7 +4,7 @@ window.GoAgain = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+  	
   }
 };
 

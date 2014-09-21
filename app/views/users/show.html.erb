@@ -1,0 +1,14 @@
+<div class="backdrop">
+	<h2><%= @user.username %></h2>
+	<p><%= @user.about_me %></p>
+	<ul>
+		<% @user.reviews.reverse.each do |review| %>
+			<li>
+				<h4><%= review.business.name %></h4>
+				<p><%= review.stars %></p>
+				<p><%= review.go_again %></p>
+				<p><%= review.content %></p>
+			</li>
+		<% end %>
+	</ul>
+</div>

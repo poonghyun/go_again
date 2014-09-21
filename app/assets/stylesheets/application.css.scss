@@ -16,9 +16,24 @@
 @import "font-awesome";
 
 body {
-	background-color: azure;
+	background-color: #99CCFF;
 }
 
 .backdrop {
 	background-color: white;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: -21px;
+	width: 90%;
+	min-height: 600px;
+	border: thin solid #888888;
+}
+
+#main-navbar {
+	background-color: #0000CC;
+
+}
+
+#navbar-collapse-1 {
+	border-color: #0000CC;
 }
