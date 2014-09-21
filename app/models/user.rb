@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
 	after_initialize :ensure_session_token
 
+	has_many :reviews
+
 	def password=(val)
 		@password = val
 		self.password_digest = BCrypt::Password.create(val)
