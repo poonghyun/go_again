@@ -1,6 +1,8 @@
 <div class="backdrop">
 	<h2><%= @user.username %></h2>
 	<p><%= @user.about_me %></p>
+
+	<h3>Reviews</h3>
 	<ul>
 		<% @user.reviews.reverse.each do |review| %>
 			<li>

@@ -7,5 +7,6 @@ GoAgain::Application.routes.draw do
   namespace :api, defaults: { format: :json } do
   	resources :businesses, only: [:show]
   	resources :reviews, only: [:show, :create, :destroy]
+  	get 'cat/:category' => "categories#result"
   end
 end
