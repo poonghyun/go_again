@@ -29,3 +29,5 @@ gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
+
+gem 'newrelic_rpm'
