@@ -9,7 +9,11 @@ class Business < ActiveRecord::Base
 			"Shopping",
 			"Hotels & Travel",
 			"Beauty & Spas",
-			"Bakeries"
+			"Bakeries",
+			"Food Carts",
+			"Gyms",
+			"Health & Medical",
+			"Home Services"
 		],
 		message: "not a valid category"
 	}
