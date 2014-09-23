@@ -21,5 +21,7 @@ module GoAgain
     # config.i18n.default_locale = :de
 
     config.assets.initialize_on_precompile = false
+
+    config.filepicker_rails.api_key = ENV["filepicker_api_key"]
   end
 end

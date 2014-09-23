@@ -30,3 +30,5 @@ gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
 
 gem 'newrelic_rpm'
+gem 'filepicker-rails'
+gem 'figaro'

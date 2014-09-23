@@ -8,3 +8,4 @@ todo:
 -add more categories
 -ability to add photos to businesses/reviews
 -endless businesses
+-fix spacing on categories title

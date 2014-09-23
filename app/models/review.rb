@@ -4,4 +4,5 @@ class Review < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :business
+	has_many :photos
 end
