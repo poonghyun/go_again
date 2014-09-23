@@ -5,7 +5,7 @@ GoAgain::Application.routes.draw do
   resource :session, only: [:create, :destroy, :new]
 
   namespace :api, defaults: { format: :json } do
-  	resources :businesses, only: [:show]
+  	resources :businesses, only: [:show, :index]
   	resources :reviews, only: [:show, :create, :destroy]
   	get 'cat/:category' => "categories#result"
   end

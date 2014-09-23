@@ -1,0 +1,9 @@
+<h1>All Businesses</h1>
+
+<a href="#">Back</a>
+
+<ul>
+	<% businesses.each(function(business) { %>
+		<li><%= business.get('name') %></li>
+	<% }); %>
+</ul>

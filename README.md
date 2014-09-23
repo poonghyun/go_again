@@ -7,3 +7,6 @@ todo:
 -buttons for categories on root static
 -add more categories
 -ability to add photos to businesses/reviews
+-guest login
+-fix blank default problem
+-endless businesses

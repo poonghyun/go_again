@@ -11,6 +11,7 @@ u2 = User.create(username: "jimmy", password: "testing")
 u3 = User.create(username: "eric", password: "testing")
 u4 = User.create(username: "rob", password: "testing")
 u5 = User.create(username: "yusuf", password: "testing")
+u6 = User.create(username: "guest", password: "welcome")
 
 b1 = Business.create(name: "Saigon Manwich", b_type: "Restaurants", price: 1)
 b2 = Business.create(name: "Philz", b_type: "Coffee & Tea", price: 2)
