@@ -8,3 +8,5 @@ todo:
 -endless businesses
 -fix spacing on categories title
 -recent reviews
+-add forwarding on root url to www
+-filepicker title box

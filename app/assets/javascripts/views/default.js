@@ -6,9 +6,8 @@ GoAgain.Views.Default = Backbone.View.extend({
 	},
 
 	render: function () {
-		var reviews = this.collection;
 		var renderedContent = this.template({
-			reviews: reviews
+			reviews: this.collection
 		});
 
 		this.$el.html(renderedContent);

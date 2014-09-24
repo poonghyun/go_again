@@ -1,8 +1,9 @@
 GoAgain.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "home",
-		"all": "businessesIndex",
-		"cat/:category": "showCategory"
+		"all": "allBusinesses",
+		"cat/:category": "categoryShow",
+		"business/:id": "businessShow"
 	},
 
 	initialize: function(options) {
@@ -10,16 +11,16 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
-		GoAgain.reviews.fetch();
+		GoAgain.allReviews.fetch();
 
 		var view = new GoAgain.Views.Default({
-			collection: GoAgain.reviews
+			collection: GoAgain.allReviews
 		});
 
 		this._swapView(view);
 	},
 
-	businessesIndex: function() {
+	allBusinesses: function() {
 		GoAgain.businesses.fetch();
 
 		var view = new GoAgain.Views.AllBusinesses({
@@ -29,7 +30,7 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 		this._swapView(view);
 	},
 
-	showCategory: function(category) {
+	categoryShow: function(category) {
 		var catModel = new GoAgain.Models.Category({
 			category: category
 		});
@@ -38,6 +39,16 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 		var view = new GoAgain.Views.CategoryShow({
 			model: catModel
+		});
+
+		this._swapView(view);
+	},
+
+	businessShow: function(id) {
+		var business = GoAgain.businesses.getOrFetch(id);
+
+		var view = new GoAgain.Views.BusinessShow({
+			model: business
 		});
 
 		this._swapView(view);

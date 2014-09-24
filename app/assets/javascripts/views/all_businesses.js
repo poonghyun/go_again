@@ -6,9 +6,8 @@ GoAgain.Views.AllBusinesses = Backbone.View.extend({
 	template: JST['all_businesses'],
 
 	render: function () {
-		var businesses = this.collection;
 		var renderedContent = this.template({
-			businesses: businesses
+			businesses: this.collection
 		});
 
 		this.$el.html(renderedContent);
