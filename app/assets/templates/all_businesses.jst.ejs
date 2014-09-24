@@ -4,6 +4,6 @@
 
 <ul>
 	<% businesses.each(function(business) { %>
-		<li><%= business.get('name') %></li>
+		<li><a href="#/business/<%= business.id %>"><%= business.get('name') %></a></li>
 	<% }); %>
 </ul>
