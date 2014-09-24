@@ -12,6 +12,7 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 	home: function() {
 		GoAgain.allReviews.fetch();
+		GoAgain.businesses.fetch();
 
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
@@ -31,6 +32,8 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	categoryShow: function(category) {
+		GoAgain.businesses.fetch();
+
 		var catModel = new GoAgain.Models.Category({
 			category: category
 		});

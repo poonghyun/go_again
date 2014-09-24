@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.serializejson
 //= require underscore
 //= require backbone
 //= require bootstrap
@@ -23,3 +24,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(function() {
+  $('.business-search').businessSearch();
+})

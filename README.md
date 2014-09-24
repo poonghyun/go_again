@@ -10,3 +10,9 @@ todo:
 -recent reviews
 -add forwarding on root url to www
 -filepicker title box
+-restrict map api access to www.go-again.com/*
+
+-search dropdown
+-search clear
+-search enter
+-animate

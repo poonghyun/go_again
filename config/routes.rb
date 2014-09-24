@@ -8,6 +8,7 @@ GoAgain::Application.routes.draw do
   	resources :businesses, only: [:show, :index]
   	resources :reviews, only: [:show, :create, :destroy, :index]
   	resources :photos, only: [:show, :create, :destroy, :index]
-  	get 'cat/:category' => "categories#result"
+  	get 'cat/:category' => 'categories#result'
+  	get 'b/search' => 'businesses#search'
   end
 end
