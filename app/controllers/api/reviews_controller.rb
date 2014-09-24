@@ -5,6 +5,11 @@ module Api
   		render json: @review
   	end
 
+    def index
+      @reviews = Review.all.reverse
+      render json: @reviews
+    end
+
   	def create
 
   	end

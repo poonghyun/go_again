@@ -10,7 +10,11 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
-		var view = new GoAgain.Views.Default();
+		GoAgain.reviews.fetch();
+
+		var view = new GoAgain.Views.Default({
+			collection: GoAgain.reviews
+		});
 
 		this._swapView(view);
 	},

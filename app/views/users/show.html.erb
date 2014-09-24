@@ -1,16 +1,43 @@
-<div class="backdrop">
-	<h2><%= @user.username %></h2>
-	<p><%= @user.about_me %></p>
+<div class="backdrop row">
 
-	<h3>Reviews</h3>
-	<ul>
-		<% @user.reviews.reverse.each do |review| %>
-			<li>
-				<h4><%= review.business.name %></h4>
-				<p><%= review.stars %></p>
-				<p><%= review.go_again %></p>
-				<p><%= review.content %></p>
-			</li>
+	<h2><%= @user.username %></h2>
+
+	<div class="col-xs-3">
+		<% if @user.fp_url %>
+			<%= filepicker_image_tag @user.fp_url, w: 160, h: 160, fit: 'clip' %>
+		<% else %>
+
 		<% end %>
-	</ul>
+
+		<%= form_for @user do |f| %>
+		  <div>
+		    <%= f.label :fp_url, "Upload a new photo:" %>
+		    <%= f.filepicker_field :fp_url, button_text: "File" %>
+		  </div>
+
+	  	<%= f.submit %>
+		<% end %>
+
+		<h4>About Me</h4>
+		<% if @user.about_me %>
+			<p><%= @user.about_me %></p>
+		<% else %>
+			<div class="about-me-form"></div>
+		<% end %>
+	</div>
+
+	<div class="col-xs-9">
+		<h3>Reviews</h3>
+		<ul>
+			<% @user.reviews.reverse.each do |review| %>
+				<li>
+					<h4><%= review.business.name %></h4>
+					<p><%= review.stars %></p>
+					<p><%= review.go_again %></p>
+					<p><%= review.content %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
 </div>

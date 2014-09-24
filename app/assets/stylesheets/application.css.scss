@@ -19,12 +19,16 @@ body {
 	background-color: #99CCFF;
 }
 
+ul {
+	list-style: none;
+}
+
 .backdrop {
 	background-color: white;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
 	margin-top: -21px;
-	width: 90%;
+	width: 80%;
 	min-height: 600px;
 	border: thin solid #888888;
 }
@@ -43,7 +47,7 @@ body {
 }
 
 .category-button {
-	width: 140px;
+	width: 150px;
 	height: 100px;
 	background-color: green;
 	margin: 30px;
@@ -81,4 +85,8 @@ body {
   top:0;
   left: 0;
   z-index: 1;
+}
+
+.review {
+	border-top: thin solid gray;
 }

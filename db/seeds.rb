@@ -29,6 +29,7 @@ b13 = Business.create(name: "Noc Noc", b_type: "Bars & Nightlife", price: 1)
 b14 = Business.create(name: "Five Guys", b_type: "Restaurants", price: 1)
 b15 = Business.create(name: "SF MOMA", b_type: "Arts & Entertainment", price: 1)
 b16 = Business.create(name: "World of Noodle", b_type: "Restaurants", price: 4)
+b17 = Business.create(name: "Señor Sisig", b_type: "Food Carts", price: 1)
 
 r1 = Review.create(content: "this place is da bomb", stars: 5, user_id: 1, business_id: 1, go_again: true)
 r2 = Review.create(content: "i think someone spit in my food", stars: 1, user_id: 3, business_id: 1, go_again: true)
