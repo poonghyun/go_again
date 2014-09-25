@@ -1,8 +1,6 @@
 <li class="review">
-  <p>Business: <%= review.get('business_id') %></p>
-  <p>User: <%= review.get('user_id') %></p>
-  <p>Stars: <%= review.get('stars') %></p>
-  <p>Go again: <%= review.get('go_again') %></p>
-  <p>Content: <%= review.get('content') %></p>
+  <h4><%= review.get('user')['username'] %> wrote a review for <%= review.get('business')['name'] %></h4>
   <p>Updated at: <%= review.get('updated_at') %></p>
+  <p>Stars: <%= review.get('stars') %> Go again: <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
+  <p>Content: <%= review.get('content') %></p>
 </li>

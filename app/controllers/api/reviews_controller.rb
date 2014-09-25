@@ -2,12 +2,12 @@ module Api
   class ReviewsController < ApiController
   	def show
   		@review = Review.find(params[:id])
-  		render json: @review
+  		render :show
   	end
 
     def index
       @reviews = Review.retrieve(params[:page])
-      render json: @reviews
+      render :index
     end
 
   	def create
