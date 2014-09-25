@@ -94,3 +94,18 @@ ul {
 .map-container {
 	float: left;
 }
+
+.preview-container {
+	position: relative;
+}
+
+.preview-link:hover {
+	background-color: pink;
+	opacity: 0.3;
+}
+
+.avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 5%;
+}

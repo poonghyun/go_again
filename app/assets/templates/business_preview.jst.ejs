@@ -1,0 +1,13 @@
+<li>
+	<div class="preview-container">
+		<h3><%= business.get('name') %></h3>
+
+		<p>Type: <%= business.get('b_type') %></p>
+
+		<p>Price: <% for(var i = 0; i < business.get('price'); i++) { %>
+		 <%= "$" %>
+		<% }; %></p>
+
+		<a href="#/business/<%= business.id %>"><span class="link-span preview-link"></span></a>
+	</div>
+</li>

@@ -1,6 +1,15 @@
 <li class="review">
-  <h4><%= review.get('user')['username'] %> wrote a review for <%= review.get('business')['name'] %></h4>
-  <p>Updated at: <%= review.get('updated_at') %></p>
-  <p>Stars: <%= review.get('stars') %> Go again: <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
+  <h4><%= review.get('user')['username'] %> wrote a review for <a href="#/business/<%= review.get('business').id %>"><%= review.get('business')['name'] %></a></h4>
+  <p>Updated at: <%= (new Date(review.get('updated_at'))).toDateString() %></p>
+
+	<p><% for(var i = 0; i < 5; i++) { %>
+		<% if(i < review.get('stars')) { %>
+			<span class="glyphicon glyphicon-star"></span>
+		<% } else { %>
+			<span class="glyphicon glyphicon-star-empty"></span>
+		<% } %>
+	<% } %></p>
+
   <p>Content: <%= review.get('content') %></p>
+  <p>Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
 </li>
