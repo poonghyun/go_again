@@ -42,6 +42,10 @@ GoAgain.Views.Default = Backbone.CompositeView.extend({
 	    url: url,
 	    dataType: "json",
 	    success: function (data) {
+	    	if(view.count === 5) {
+	    		view.$(".get-more-reviews").remove();
+	    	}
+
 	      _(data).each(function(review){
 	      	var reviewModel = new GoAgain.Models.Review(review);
 	      	view.collection.add(reviewModel);
