@@ -46,3 +46,7 @@ r4 = Review.create(content: "eh...", stars: 2, user_id: 5, business_id: 1, go_ag
 	r4.toggle!(:go_again)
 r5 = Review.create(content: "mmmm coffee. gettin mah fix", stars: 5, user_id: 3, business_id: 2, go_again: true)
 r6 = Review.create(content: "everything is okay when i drink", stars: 4, user_id: 1, business_id: 4, go_again: true)
+r7 = Review.create(content: "these guys were pretty good. i felt like the price was fair and they were done quickly.", stars: 4, user_id: 1, business_id: 9, go_again: true)
+r8 = Review.create(content: "i think i got food poisoning from the soup", stars: 1, user_id: 7, business_id: 16, go_again: true)
+	r8.toggle!(:go_again)
+r9 = Review.create(content: "okay. very good.", stars: 4, user_id: 7, business_id: 13, go_again: true)

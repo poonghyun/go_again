@@ -31,7 +31,7 @@ $.BusinessSearch.prototype.renderResults = function (results) {
     $a.text(result.name);
     $a.attr("href", "#/business/" + result.id);
 
-    var $li = $("<li>");
+    var $li = $("<li role='option' tab-index='0'></li>");
     $li.append($a);
 
     this.$result.append($li);

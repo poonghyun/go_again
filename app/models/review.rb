@@ -5,4 +5,13 @@ class Review < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :business
 	has_many :photos
+
+	def self.retrieve(page = nil)
+		reviews = Review.all.order(updated_at: :desc)
+		if page
+			reviews.limit(5).offset(page.to_i * 5)
+		else
+			reviews.limit(5)
+		end
+	end
 end

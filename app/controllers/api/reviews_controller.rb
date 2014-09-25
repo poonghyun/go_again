@@ -6,7 +6,7 @@ module Api
   	end
 
     def index
-      @reviews = Review.all.reverse
+      @reviews = Review.retrieve(params[:page])
       render json: @reviews
     end
 

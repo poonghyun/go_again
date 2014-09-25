@@ -12,7 +12,8 @@ todo:
 -filepicker title box
 -restrict map api access to www.go-again.com/*
 
--search dropdown
+-search dropdown/typeahead - http://twitter.github.io/typeahead.js/examples/
 -search clear
 -search enter
 -animate
+-add glyphicon
