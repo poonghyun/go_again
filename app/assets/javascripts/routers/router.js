@@ -3,7 +3,8 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 		"": "home",
 		"all": "allBusinesses",
 		"cat/:category": "categoryShow",
-		"business/:id": "businessShow"
+		"business/:id": "businessShow",
+		"user/:id": "userShow"
 	},
 
 	initialize: function(options) {
@@ -52,6 +53,17 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 		var view = new GoAgain.Views.BusinessShow({
 			model: business
+		});
+
+		this._swapView(view);
+	},
+
+	userShow: function(id) {
+		var user = new GoAgain.Models.User({ id: id });
+		user.fetch();
+
+		var view = new GoAgain.Views.UserShow({
+			model: user
 		});
 
 		this._swapView(view);

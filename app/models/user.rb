@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 
 	has_many :reviews
+	has_many :photos, through: :reviews
 
 	def password=(val)
 		@password = val

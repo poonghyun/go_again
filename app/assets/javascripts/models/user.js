@@ -1,9 +1,9 @@
-GoAgain.Models.Business = Backbone.Model.extend({
-	urlRoot: "/api/businesses",
+GoAgain.Models.User = Backbone.Model.extend({
+	urlRoot: "/api/users",
 
 	reviews: function() {
 		if(!this._reviews) {
-			this._reviews = new GoAgain.Collections.Reviews([], { business: this });
+			this._reviews = new GoAgain.Collections.Reviews([], { user: this });
 		}
 
 		return this._reviews;
