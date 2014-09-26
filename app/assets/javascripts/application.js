@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require backbone.bootstrap-modal
 //= require go_again
 //= require_tree ../templates
 //= require_tree ./utils

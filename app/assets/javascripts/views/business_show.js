@@ -25,5 +25,31 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		this.attachSubviews();
 
 		return this;
+	},
+
+	events: {
+		"click .launch-new-review": "newReviewModal"
+	},
+
+	newReviewModal: function () {
+		var view = new GoAgain.Views.ReviewNew({ model: this.model });
+
+		var modal = new Backbone.BootstrapModal({
+			content: view,
+			animate: true
+		}).open();
+
+		modal.on("ok", this.okClicked.bind(this));
+	},
+
+	okClicked: function (modal) {
+		var view = this;
+		var params = $("form").serializeJSON();
+		var review = new GoAgain.Models.Review(params["review"]);
+		review.save({}, {
+			success: function () {
+				view.collection.add(review);
+			}
+		});
 	}
 });

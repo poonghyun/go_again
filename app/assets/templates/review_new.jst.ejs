@@ -1,0 +1,19 @@
+<h3>Write a Review for <%= business.get('name') %></h3>
+<form class="new-review">
+  <input type="hidden"
+         name="review[business_id]"
+         value="<%= business.escape("id") %>">
+
+ 	<input type="number" name="review[stars]">
+
+  <label>
+    Your thoughts
+    <textarea name="review[content]"></textarea>
+  </label>
+
+  <label>
+  Go again?
+  <input type="radio" name="review[go_again]" value="true">Yes
+  <input type="radio" name="review[go_again]" value="false">No
+  </label>
+</form>

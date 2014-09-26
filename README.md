@@ -16,6 +16,9 @@ todo:
 -spinner for map load
 -session/user redirect if already logged in
 -image thumbnail for dropdown
+-modal for new review form
+-validation for inputs for new review
+-conditional showing new review - edit vs new
 
 -browse map/find business feature
 
