@@ -8,7 +8,8 @@ module Api
 
   	def index
   		@businesses = Business.all
-  		render json: @businesses
+  		# render json: @businesses
+      render :index
   	end
 
     def search

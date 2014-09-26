@@ -12,22 +12,21 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
-		GoAgain.allReviews.fetch();
-		GoAgain.businesses.fetch();
-
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
 		});
+
+		GoAgain.allReviews.fetch();
 
 		this._swapView(view);
 	},
 
 	allBusinesses: function() {
-		GoAgain.businesses.fetch();
-
 		var view = new GoAgain.Views.AllBusinesses({
 			collection: GoAgain.businesses
 		});
+
+		GoAgain.businesses.fetch();
 
 		this._swapView(view);
 	},
@@ -60,11 +59,12 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 	userShow: function(id) {
 		var user = new GoAgain.Models.User({ id: id });
-		user.fetch();
 
 		var view = new GoAgain.Views.UserShow({
 			model: user
 		});
+
+		user.fetch();
 
 		this._swapView(view);
 	},

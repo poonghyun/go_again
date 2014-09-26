@@ -1,7 +1,7 @@
 GoAgain.Views.Default = Backbone.CompositeView.extend({
 	template: JST['default'],
 
-	initialize: function () {
+	initialize: function (options) {
 		this.listenTo(this.collection, "sync", this.render);
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
 

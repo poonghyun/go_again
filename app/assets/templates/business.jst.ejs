@@ -1,14 +1,16 @@
 <h1 class="text-center"><%= business.get('name') %></h1>
 
-<div class="map-container">
-	<iframe
-	  width="300"
-	  height="300"
-	  frameborder="0" style="border:0"
-	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY
-	    &q=<%= business.get('name').replace(/ /g,'+') %>,San+Francisco+CA">
-	</iframe>
-</div>
+<% if(business.get('name')) { %>
+	<div class="map-container">
+		<iframe
+		  width="300"
+		  height="300"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY
+		    &q=<%= business.get('name').replace(/ /g,'+') %>,San+Francisco+CA">
+		</iframe>
+	</div>
+<% } %>
 
 <button class="launch-new-review">Write a review</button>
 

@@ -10,7 +10,6 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 	},
 
 	addReview: function (review) {
-		debugger;
 		var reviewShow = new GoAgain.Views.ReviewShow({
 			model: review
 		});
