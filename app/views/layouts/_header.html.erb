@@ -13,10 +13,10 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <% if current_user %>
         <form class="navbar-form navbar-left business-search" role="search">
-          <div class="form-group">
+          <div id="typeahead-search-bar" class="form-group">
             <input
               type="text"
-              class="form-control business-name"
+              class="form-control business-name typeahead"
               placeholder="Find a business">
           </div>
           <ul class="business-search-results"></ul>

@@ -109,3 +109,8 @@ ul {
 	height: 30px;
 	border-radius: 5%;
 }
+
+.empty-search-result, .business-search-result {
+	background-color: white;
+	border: thin solid gray;
+}

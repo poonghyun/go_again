@@ -24,4 +24,13 @@ class Business < ActiveRecord::Base
 	def self.find_by_category(category)
 		self.where(b_type: category)
 	end
+
+	def average_rating
+		total = 0
+		self.reviews.each do |review|
+			total += review.stars
+		end
+
+		(total.to_f / self.reviews.count).round(2)
+	end
 end

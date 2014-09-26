@@ -17,6 +17,8 @@
 //= require backbone
 //= require bootstrap
 //= require backbone.bootstrap-modal
+//= require typeahead.bundle
+//= require handlebars-1.0.rc.1.min
 //= require go_again
 //= require_tree ../templates
 //= require_tree ./utils

@@ -27,3 +27,16 @@ todo:
 -search enter
 -animate
 -add glyphicon
+
+-----
+
+user show
+about me
+edit review
+photos
+logo
+revamp categories
+typeahead search
+map feature
+likes
+business pagination
