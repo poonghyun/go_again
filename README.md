@@ -1,42 +1,49 @@
-todo:
+TODO
 
--logo
--about me backbone form
--center search bar
--add more categories
--ability to add photos to businesses/reviews
--endless businesses
--add forwarding on root url to www
--filepicker title box
--restrict map api access to www.go-again.com/*
--refreshing on business show page
--liking reviews
--most liked review per business
--reverse order of reviews on business page
--spinner for map load
--session/user redirect if already logged in
--image thumbnail for dropdown
--modal for new review form
--validation for inputs for new review
--conditional showing new review - edit vs new
+map:
+-preview
+-clicking on marker recenters map
+-loading animation
 
--browse map/find business feature
+user-show:
+-move over stuff from rails user show
+-about me form
+-different review view
+-update thumbnail in navbar if user has photo
 
--search dropdown/typeahead - http://twitter.github.io/typeahead.js/examples/
--search clear
--search enter
--animate
--add glyphicon
+business-show:
+-different review view
+-loading animation
 
------
+new/edit review:
+-validation
+-conditional edit/new
 
-user show
-about me
-edit review
+typeahead search:
+-center in nav
+-response to enter key (clear on enter as well)
+-styles and highlight first
+
+categories
+-make show better
+
+all-businesses
+-paginate
+
 photos
-logo
-revamp categories
-typeahead search
-map feature
+-switch from filepicker
+-add ability to add photos to review
+-modify review views
+
 likes
-business pagination
+-most liked review per business
+-ability to like review
+
+logo
+restrict maps api access
+redirect from new session if already logged in
+forwarding on root url to www
+reverse review ordering
+include average rating
+average rating stars graphic
+404/other error pages

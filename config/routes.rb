@@ -1,7 +1,7 @@
 GoAgain::Application.routes.draw do
 	root to: 'static_pages#root'
 
-  resources :users, only: [:create, :new, :show, :update]
+  resources :users, only: [:create, :new, :update]
   resource :session, only: [:create, :destroy, :new]
 
   namespace :api, defaults: { format: :json } do
@@ -11,5 +11,6 @@ GoAgain::Application.routes.draw do
   	resources :photos, only: [:show, :create, :destroy, :index]
   	get 'cat/:category' => 'categories#result'
   	get 'b/search' => 'businesses#search'
+    get 'b/range' => 'businesses#range'
   end
 end
