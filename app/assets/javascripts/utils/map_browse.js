@@ -87,5 +87,5 @@ MapBrowse.loadMap = function() {
 
   var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
   
-  setTimeout(function(){$('body').append($script)}, 400);
+  setTimeout(function(){$('body').append($script)}, 600);
 }
