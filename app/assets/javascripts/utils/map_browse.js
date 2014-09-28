@@ -83,24 +83,9 @@ MapBrowse.initialize = function() {
 }
 
 MapBrowse.loadMap = function() {
-	var removeScripts = function () {
-		var r = $.Deferred();
+	$('body > script').remove();
 
-		$('body > script').remove();
+  var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
 
-		setTimeout(function() {
-			r.resolve();
-		}, 100);
-
-		return r;
-	};
-
-	
-	var addScripts = function() {
-		var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
-  
-		$('body').append($script);
-	};
-
-	removeScripts().done(addScripts);
+  $('body').append($script);
 }
