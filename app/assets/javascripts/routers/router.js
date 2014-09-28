@@ -12,6 +12,8 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
+		MapBrowse.loadMap();
+
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
 		});

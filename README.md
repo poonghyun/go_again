@@ -49,5 +49,5 @@ average rating stars graphic
 infinite reviews scroll, no click
 make stars yellow
 about me empty form validation
-map doesn't load on initial login
 ability to update about me
+only allow user to update their own about me
