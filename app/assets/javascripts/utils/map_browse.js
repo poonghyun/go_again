@@ -83,9 +83,7 @@ MapBrowse.initialize = function() {
 }
 
 MapBrowse.loadMap = function() {
-	$('body > script').remove();
-
-  var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
+	var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
 
   $('body').append($script);
 }
