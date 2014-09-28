@@ -83,9 +83,24 @@ MapBrowse.initialize = function() {
 }
 
 MapBrowse.loadMap = function() {
-	$('body > script').remove();
+	var removeScripts = function () {
+		var r = $.Deferred();
 
-  var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
+		$('body > script').remove();
+
+		setTimeout(function() {
+			r.resolve();
+		}, 100);
+
+		return r;
+	};
+
+	
+	var addScripts = function() {
+		var $script = $('<script>').attr("type", "text/javascript").attr("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&callback=MapBrowse.initialize");
   
-  setTimeout(function(){$('body').append($script)}, 600);
+		$('body').append($script);
+	};
+
+	removeScripts().done(addScripts);
 }
