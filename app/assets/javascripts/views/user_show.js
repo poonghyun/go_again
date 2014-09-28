@@ -10,7 +10,7 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 	},
 
 	addReview: function (review) {
-		var reviewShow = new GoAgain.Views.ReviewShow({
+		var reviewShow = new GoAgain.Views.ReviewUserShow({
 			model: review
 		});
 		this.addSubview(".review-list", reviewShow);
@@ -25,5 +25,19 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 		this.attachSubviews();
 
 		return this;
+	},
+
+	events: {
+		"click .about-me-link": "newAboutMe"
+	},
+
+	newAboutMe: function(event) {
+		event.preventDefault();
+
+		var formView = new GoAgain.Views.AboutMeForm({
+			model: this.model
+		});
+
+		$('.about-me-link').replaceWith(formView.render().$el);
 	}
 });

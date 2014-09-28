@@ -55,20 +55,22 @@ function initialize() {
 	    method: "GET",
 	    data: { query: [xRange, yRange, centerString] },
 	    success: function(response) {
-  	  for (var i = 0; i < markers.length; i++) {
-		    markers[i].setMap(null);
-		  }
-			markers = [];
+	  	  for (var i = 0; i < markers.length; i++) {
+			    markers[i].setMap(null);
+			  }
+				markers = [];
 
 	    	// place some markers based on the response
 	    	var closest = response.closest;
 	    	var others = response.others;
 
+	    	// place closest marker
     	  var closestMarker = new google.maps.Marker({
 			    position: new google.maps.LatLng(closest.x_coord, closest.y_coord),
 			    map: map,
 			    title: closest.name,
 			    icon: 'http://maps.google.com/mapfiles/ms/micons/yellow-dot.png'
+			    // animation: google.maps.Animation.DROP
 			  });
 
 			  markers.push(closestMarker);
@@ -83,6 +85,20 @@ function initialize() {
 			  	});
 			  	markers.push(otherMarker);
 			  });
+
+			  // add listeners to markers
+			  for(var i = 0; i < markers.length; i++) {
+			  	google.maps.event.addListener(markers[i], "click", function(marker) {
+			  		map.panTo(marker.latLng);
+			  		findBusinesses(map.getBounds(), map.getCenter());
+			  	})
+			  }
+
+			  // populate preview
+			  var model = GoAgain.businesses.getOrFetch(closest.id);
+			  $(".browse-business").html(new GoAgain.Views.BusinessMapShow({
+			  	model: model
+			  }).render().$el);
 	    }
 	  });
 	}

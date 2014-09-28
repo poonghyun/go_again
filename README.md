@@ -2,22 +2,21 @@ TODO
 
 map:
 -preview
--clicking on marker recenters map
 -loading animation
+-animate pins
 
 user-show:
 -move over stuff from rails user show
 -about me form
--different review view
 -update thumbnail in navbar if user has photo
 
 business-show:
--different review view
 -loading animation
 
 new/edit review:
 -validation
 -conditional edit/new
+-make prettier
 
 typeahead search:
 -center in nav
@@ -47,3 +46,8 @@ reverse review ordering
 include average rating
 average rating stars graphic
 404/other error pages
+infinite reviews scroll, no click
+make stars yellow
+about me empty form validation
+map doesn't load on initial login
+ability to update about me

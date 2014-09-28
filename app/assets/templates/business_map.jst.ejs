@@ -1,0 +1,10 @@
+
+	<h3><%= business.get('name') %></h3>
+
+	<p>Type: <%= business.get('b_type') %></p>
+
+	<p>Price: <% for(var i = 0; i < business.get('price'); i++) { %>
+	 <%= "$" %>
+	<% }; %></p>
+
+	<p>Average Review: <%= business.get('average_review') %></p>

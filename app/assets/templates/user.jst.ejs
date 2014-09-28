@@ -1,8 +1,19 @@
-<h1 class="text-center"><%= user.get('username') %></h1>
+<div class="row">
+	<h1 class="text-center"><%= user.get('username') %></h1>
 
-<div>
-	<h3>Reviews</h3>
-  <ul class="review-list">
+	<div class="col-xs-3 user-left">
+		<h4>About Me</h4>
+		<% if(user.get('about_me')) { %>
+			<p><%= user.get('about_me') %></p>
+		<% } else { %>
+			<a href="#" class="about-me-link">Make!</a>
+		<% } %>
+	</div>
 
-  </ul>
+	<div class="col-xs-9">
+		<h3>Reviews</h3>
+	  <ul class="review-list">
+
+	  </ul>
+	</div>
 </div>

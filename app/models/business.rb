@@ -56,7 +56,7 @@ class Business < ActiveRecord::Base
 		self.where(b_type: category)
 	end
 
-	def average_rating
+	def average_review
 		total = 0
 		self.reviews.each do |review|
 			total += review.stars

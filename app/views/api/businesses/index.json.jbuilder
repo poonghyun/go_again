@@ -5,6 +5,7 @@ json.array! @businesses do |business|
   json.created_at business.created_at
   json.updated_at business.updated_at
   json.price business.price
+  json.average_review business.average_review
 
 	json.reviews business.reviews do |review|
 		json.extract! review, :id, :content, :stars, :created_at, :updated_at, :go_again

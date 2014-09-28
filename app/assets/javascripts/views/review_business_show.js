@@ -1,5 +1,5 @@
-GoAgain.Views.BusinessMapShow = Backbone.View.extend({
-	template: JST['business_map'],
+GoAgain.Views.ReviewBusinessShow = Backbone.View.extend({
+	template: JST['review_business'],
 
 	initialize: function() {
 		this.listenTo(this.model, "sync", this.render);
@@ -7,7 +7,7 @@ GoAgain.Views.BusinessMapShow = Backbone.View.extend({
 
 	render: function() {
 		var renderedContent = this.template({
-			business: this.model
+			review: this.model
 		});
 
 		this.$el.html(renderedContent);

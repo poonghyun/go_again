@@ -10,7 +10,7 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 
 	addReview: function (review) {
-		var reviewShow = new GoAgain.Views.ReviewShow({
+		var reviewShow = new GoAgain.Views.ReviewBusinessShow({
 			model: review
 		});
 		this.addSubview(".review-list", reviewShow);
