@@ -25,7 +25,6 @@ GoAgain.Collections.Businesses = Backbone.Collection.extend({
 	},
 
 	parse: function(response) {
-		console.log(response);
 		if(response.closest) {
 			this.getActive().set(response.closest)
 			delete response.closest;
