@@ -54,12 +54,19 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 			animate: true
 		}).open();
 
-		modal.on("ok", this.okClicked.bind(this));
+		var bView = this;
+
+		modal.on("ok", function() {
+			var params = $("form").serializeJSON();
+
+
+
+			bView.okClicked(params);
+		});
 	},
 
-	okClicked: function (modal) {
+	okClicked: function (params) {
 		var view = this;
-		var params = $("form").serializeJSON();
 		var review = new GoAgain.Models.Review(params["review"]);
 		review.save({}, {
 			success: function (resp) {
@@ -67,6 +74,8 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 					// replace
 				} else {
 					view.collection.add(review);
+					var a = view.$('.launch-new-review')//.replaceWith('<button class="launch-edit-review">Edit your review</button>');
+					debugger;
 				}
 			}
 		});

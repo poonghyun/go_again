@@ -58,8 +58,6 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
-		MapBrowse.loadMap();
-
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
 		});
@@ -67,6 +65,7 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 		GoAgain.allReviews.fetch();
 
 		this._swapView(view);
+		// MapBrowse.reload();
 	},
 
 	allBusinesses: function() {

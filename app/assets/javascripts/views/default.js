@@ -6,6 +6,16 @@ GoAgain.Views.Default = Backbone.CompositeView.extend({
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
 
 		this.collection.each(this.addReview.bind(this));
+
+		var mapView = new GoAgain.Views.MapView({
+			collection: GoAgain.businesses,
+			model: GoAgain.businesses.getActive()
+		});
+		this.addSubview("#map-browser", mapView);
+		var businessPreview = new GoAgain.Views.BusinessPreview({
+			model: GoAgain.businesses.getActive()
+		});
+		this.addSubview(".browse-business", businessPreview);
 	},
 
 	addReview: function (review) {

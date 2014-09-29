@@ -1,5 +1,7 @@
-json.closest do
-	json.extract!(@closest, :id, :name, :b_type, :created_at, :updated_at, :price, :x_coord, :y_coord)
+if @closest
+	json.closest do
+		json.extract!(@closest, :id, :name, :b_type, :created_at, :updated_at, :price, :x_coord, :y_coord)
+	end
 end
 
 json.others @businesses do |business|

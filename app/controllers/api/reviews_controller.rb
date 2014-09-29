@@ -25,8 +25,11 @@ module Api
 
     def update
       @review = Review.where(user_id: current_user.id, business_id: params[:business_id]).first
-      @review.update(review_params)
-      render :update
+      if @review.update(review_params)
+        render :update
+      else
+        render :json => @review.errors, :status => :unprocessable_entity
+      end
     end
 
     private

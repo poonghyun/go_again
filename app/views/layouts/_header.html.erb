@@ -11,42 +11,30 @@
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <% if current_user %>
-        <form class="navbar-form navbar-left business-search" role="search">
-          <div id="typeahead-search-bar" class="form-group">
-            <input
-              type="text"
-              class="form-control business-name typeahead"
-              placeholder="Find a business">
-          </div>
-          <ul class="business-search-results"></ul>
-        </form>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle btn" data-toggle="dropdown">
-              <%= current_user.username %>
-              <img src="/assets/default-avatar.jpg" class="avatar">
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#/user/<%= current_user.id %>">Profile</a></li>
-              <li class="divider"></li>
-              <li><%= link_to "Log out", session_url, method: :delete %></li>
-            </ul>
-          </li>
-        </ul>
-      <% else %>
-        <div class="nav navbar-nav navbar-right">
-          <a href="/users/new" class="btn btn-primary">Sign up</a>
+      <form class="navbar-form navbar-left business-search" role="search">
+        <div id="typeahead-search-bar" class="form-group">
+          <input
+            type="text"
+            class="form-control business-name typeahead"
+            placeholder="Find a business">
         </div>
-      <% end %>
+        <ul class="business-search-results"></ul>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn" data-toggle="dropdown">
+            <%= current_user.username %>
+            <img src="/assets/default-avatar.jpg" class="avatar">
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/user/<%= current_user.id %>">Profile</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log out", session_url, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+      
     </div>
   </div>
 </nav>
-
-<% if flash[:errors] %>
-<div class="alert alert-warning alert-dismissible" role="alert">
-   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-<%= flash[:errors].join("<br>").html_safe %>
-</div>
-<% end %>
