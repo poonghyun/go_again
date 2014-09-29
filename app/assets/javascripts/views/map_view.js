@@ -32,13 +32,12 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	},
 
 	bindListeners: function() {
-		  // for(var i = 0; i < this.markers.length; i++) {
-				// 	google.maps.event.addListener(this.markers[i], "click", function(marker) {
-		  // 		this.map.panTo(marker.latLng);
-		  // 		this.findBusinesses(this.map.getBounds(), this.map.getCenter());
-		  // 	}
-
-		console.log('binding listeners');
+	  for(var i = 0; i < this.markers.length; i++) {
+			google.maps.event.addListener(this.markers[i], "click", function(marker) {
+  			this.map.panTo(marker.latLng);
+  			this.findBusinesses(this.map.getBounds(), this.map.getCenter());
+  		});
+	  }
 
 		var counter = 0;
 
@@ -47,20 +46,17 @@ GoAgain.Views.MapView = Backbone.View.extend({
 				counter++;
 				return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
 			}
-	  	// return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
 	  }.bind(this));
 	},
 
 	initializeMap: function () {
-	  this.map = window.map || new google.maps.Map(this.$('.map')[0],
+	  this.map = new google.maps.Map(this.$('.map')[0],
     this.mapOptions);
 	},
 
 	addMarkers: function () {
-		console.log('adding markers');
 	  for (var i = 0; i < this.markers.length; i++) {
 	    this.markers[i].setMap(null);
-	    console.log('nilling marker')
 	  }
 		this.markers = [];
 
@@ -89,14 +85,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	  	});
 	  	this.markers.push(otherMarker);
 	  }, this);
-
-	  // add listeners to markers
-	  // for(var i = 0; i < this.markers.length; i++) {
-	  // 	google.maps.event.addListener(this.markers[i], "click", function(marker) {
-	  // 		this.map.panTo(marker.latLng);
-	  // 		this.findBusinesses(this.map.getBounds(), this.map.getCenter());
-	  // 	})
-	  // }
 
 	  // populate preview
 	  // var model = GoAgain.businesses.getOrFetch(closest.id);
