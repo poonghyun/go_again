@@ -13,7 +13,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	},
 
 	render: function () {
-		console.log("rendering");
 		var renderedContent = this.template();
 
 		this.$el.html(renderedContent);
@@ -24,12 +23,12 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		setTimeout(function () {
 		  this.debouncedFindBusinesses(this.map.getBounds(), new google.maps.LatLng(37.781014,-122.41142))();
 		}.bind(this), 100)
-		// this.findBusinesses(this.map.getBounds(), new google.maps.LatLng(37.781014,-122.41142));
+
 		return this;
 	},
 
 	debouncedFindBusinesses: function (bounds, center) {
-    return _.throttle(this.findBusinesses.bind(this, bounds, center), 1000);
+    return _.throttle(this.findBusinesses.bind(this, bounds, center), 10);
 	},
 
 	bindListeners: function() {
@@ -40,9 +39,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		  // 	}
 
 		google.maps.event.addListener(this.map, 'bounds_changed', _.debounce(function() {
-	    //counter to keep it from getting ridiculous with the requests
-		  	return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
-	  }.bind(this), 1000));
+	  	return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
+	  }.bind(this), 100));
 	},
 
 	initializeMap: function () {
@@ -51,7 +49,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	},
 
 	addMarkers: function () {
-		console.log("adding markers")
 	  for (var i = 0; i < this.markers.length; i++) {
 	    this.markers[i].setMap(null);
 	  }
@@ -101,11 +98,10 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	},
 
 	findBusinesses: function(bounds, center) {
-	  console.log("finding business", arguments)
 		var xRange = bounds.Ea.k + "," + bounds.Ea.j;
 		var yRange = bounds.ua.k + "," + bounds.ua.j;
 		var centerString = center.k + "," + center.B;
-    this.collection.fetch({data: { query: [xRange, yRange, centerString] }}).then(function(){
+    this.collection.fetch({data: { query: [xRange, yRange, centerString] }}).then(function() {
 			this.bindListeners();
 			google.maps.event.trigger(this.map, 'resize');
     }.bind(this));
