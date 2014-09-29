@@ -23,6 +23,12 @@ module Api
 
   	end
 
+    def update
+      @review = Review.where(user_id: current_user.id, business_id: params[:business_id]).first
+      @review.update(review_params)
+      render :update
+    end
+
     private
 
     def review_params

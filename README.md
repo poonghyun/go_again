@@ -30,13 +30,14 @@ all-businesses
 -paginate
 
 photos
--switch from filepicker
 -add ability to add photos to review
 -modify review views
 
 likes
 -most liked review per business
 -ability to like review
+
+prettify
 
 logo
 restrict maps api access
@@ -51,3 +52,4 @@ make stars yellow
 about me empty form validation
 ability to update about me
 only allow user to update their own about me
+maps bug

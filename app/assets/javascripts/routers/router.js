@@ -9,9 +9,57 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
+
+		$search = $('#typeahead-search-bar .typeahead');
+		
+		var router = this;
+
+    // $search.keyup(function(e){
+    //   if(e.keyCode === 13 && $search.typeahead('val')) {
+    //     // grab first suggestion's id
+    //     var b_id = $('.tt-suggestion > .business-search-result').data('b-id');
+    //     // look up business and create model
+				// var business = GoAgain.businesses.getOrFetch(b_id);
+
+				// var view = new GoAgain.Views.BusinessShow({
+				// 	model: business
+				// });
+    //     // swap view for business show
+    //     router._swapView(view);
+    //     $search.typeahead('val', '');
+    //   } else {
+    //   	// select first suggestion
+    //   }
+    // })
+
+		$search.keyup(function(e) {
+			if(e.keyCode === 13) {
+
+				var suggestions = $('.tt-suggestion').length;
+
+				if($search.typeahead('val') && (suggestions > 0)) {
+					var b_id = $('.tt-suggestion > .business-search-result').data('b-id');
+					var business = GoAgain.businesses.getOrFetch(b_id);
+					var view = new GoAgain.Views.BusinessShow({
+						model: business
+					});
+					router._swapView(view);
+
+					$search.typeahead('val', '');
+				}
+			} else {
+				// handle non-enter input
+
+				// case for arrow keys
+				// case for typing
+
+			}
+		})
 	},
 
 	home: function() {
+		MapBrowse.loadMap();
+
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
 		});

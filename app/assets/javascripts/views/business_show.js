@@ -28,11 +28,26 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"click .launch-new-review": "newReviewModal"
+		"click .launch-new-review": "newReviewModal",
+		"click .launch-edit-review": "editReviewModal"
 	},
 
 	newReviewModal: function () {
 		var view = new GoAgain.Views.ReviewNew({ model: this.model });
+
+		var modal = new Backbone.BootstrapModal({
+			content: view,
+			animate: true
+		}).open();
+
+		modal.on("ok", this.okClicked.bind(this));
+	},
+
+	editReviewModal: function () {
+		var view = new GoAgain.Views.ReviewEdit({
+			model: this.model.attributes.current_user_review,
+			business_name: this.model.get('name')
+		});
 
 		var modal = new Backbone.BootstrapModal({
 			content: view,
@@ -47,8 +62,12 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		var params = $("form").serializeJSON();
 		var review = new GoAgain.Models.Review(params["review"]);
 		review.save({}, {
-			success: function () {
-				view.collection.add(review);
+			success: function (resp) {
+				if(view.collection.get(resp.id)) {
+					// replace
+				} else {
+					view.collection.add(review);
+				}
 			}
 		});
 	}

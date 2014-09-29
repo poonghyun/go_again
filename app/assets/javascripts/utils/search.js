@@ -74,46 +74,45 @@ $.BusinessSearch = function (el) {
             'No results',
             '</div>'
           ].join('\n'),
-          suggestion: Handlebars.compile('<div class="business-search-result"><a href="#/business/{{value.id}}">{{value.name}}</a></div>')
-          }
+          suggestion: Handlebars.compile('<div class="business-search-result" data-b-id={{value.id}}><a href="#/business/{{value.id}}">{{value.name}}</a></div>')
         }
-      )
+      })
     }
   });
 
 };
 
-$.BusinessSearch.prototype.handleInput = function (event) {
-  if (this.$input.val() == "") {
-    this.renderResults([]);
-    return;
-  }
+// $.BusinessSearch.prototype.handleInput = function (event) {
+//   if (this.$input.val() == "") {
+//     this.renderResults([]);
+//     return;
+//   }
 
-  $.ajax({
-    url: "/api/b/search",
-    dataType: "json",
-    method: "GET",
-    data: { query: this.$input.val() },
-    success: this.renderResults.bind(this)
-  });
-};
+//   $.ajax({
+//     url: "/api/b/search",
+//     dataType: "json",
+//     method: "GET",
+//     data: { query: this.$input.val() },
+//     success: this.renderResults.bind(this)
+//   });
+// };
 
-$.BusinessSearch.prototype.renderResults = function (results) {
-  this.$result.empty();
+// $.BusinessSearch.prototype.renderResults = function (results) {
+//   this.$result.empty();
 
-  for (var i = 0; i < results.length; i++) {
-    var result = results[i];
+//   for (var i = 0; i < results.length; i++) {
+//     var result = results[i];
 
-    var $a = $("<a>");
-    $a.text(result.name);
-    $a.attr("href", "#/business/" + result.id);
+//     var $a = $("<a>");
+//     $a.text(result.name);
+//     $a.attr("href", "#/business/" + result.id);
 
-    var $li = $("<li role='option' tab-index='0'></li>");
-    $li.append($a);
+//     var $li = $("<li role='option' tab-index='0'></li>");
+//     $li.append($a);
 
-    this.$result.append($li);
-  }
-};
+//     this.$result.append($li);
+//   }
+// };
 
 $.fn.businessSearch = function () {
   return this.each(function () {

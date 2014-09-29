@@ -111,7 +111,6 @@ ul {
 }
 
 .empty-search-result, .business-search-result {
-	background-color: white;
 	border: thin solid gray;
 }
 
@@ -129,4 +128,8 @@ ul {
 	width: 35%;
 	height: 450px;
 	background-color: lightgray;
+}
+
+.tt-cursor {
+	background-color: orange;
 }
