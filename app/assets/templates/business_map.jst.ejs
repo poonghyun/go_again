@@ -1,7 +1,7 @@
 
-	<h3><%= business.get('name') %></h3>
+	<h3><a href="#/business/<%= business.id %>"><%= business.get('name') %></a></h3>
 
-	<p>Type: <%= business.get('b_type') %></p>
+	<p><a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
 
 	<p>Price: <% for(var i = 0; i < business.get('price'); i++) { %>
 	 <%= "$" %>

@@ -40,6 +40,10 @@ b19 = Business.create(name: "Tu Lan Vietnamese Restaurant", b_type: "Restaurants
 b20 = Business.create(name: "Brenda's", b_type: "Restaurants", price: 2, x_coord: 37.78292, y_coord: -122.418971)
 b21 = Business.create(name: "Yerba Buena Gardens", b_type: "Arts and Entertainment", price: 1, x_coord: 37.785094, y_coord: -122.40274)
 b22 = Business.create(name: "Westfield San Francisco Centre", b_type: "Shopping", price: 2, x_coord: 37.784143, y_coord: -122.407361)
+b23 = Business.create(name: "24 Hour Fitness", b_type: "Gyms", price: 1, x_coord: 37.725616, y_coord: -122.462063)
+b24 = Business.create(name: "Asian Art Museum", b_type: "Arts & Entertainment", price: 1, x_coord: 37.780264, y_coord: -122.416384)
+b25 = Business.create(name: "Circle Community Acupuncture", b_type: "Health & Medical", price: 3, x_coord: 37.771866, y_coord: -122.410616)
+b26 = Business.create(name: "Benkyodo Co", b_type: "Bakeries", price: 2, x_coord: 37.786357, y_coord: -122.430161)
 
 r1 = Review.create(content: "this place is da bomb", stars: 5, user_id: 1, business_id: 1, go_again: true)
 r2 = Review.create(content: "i think someone spit in my food", stars: 1, user_id: 3, business_id: 1, go_again: true)
