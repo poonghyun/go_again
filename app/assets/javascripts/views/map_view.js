@@ -73,6 +73,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	    // animation: google.maps.Animation.DROP
 	  });
 
+	  if(!closestMarker) { location.reload(true); }
+
 	  this.markers.push(closestMarker);
 
 	  // place other markers

@@ -30,5 +30,4 @@
 
 $(function() {
   $('.business-search').businessSearch();
-  // MapBrowse.loadMap();
 })
