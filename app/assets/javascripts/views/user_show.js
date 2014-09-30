@@ -5,6 +5,7 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 		this.collection = this.model.reviews();
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
+		this.listenTo(this.collection, "change", this.render);
 
 		this.collection.each(this.addReview.bind(this));
 	},
@@ -28,7 +29,8 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"click .about-me-link": "newAboutMe"
+		"click .about-me-link": "newAboutMe",
+		"click .avatar-container a": "uploadAvatar"
 	},
 
 	newAboutMe: function(event) {
@@ -39,5 +41,26 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 		});
 
 		$('.about-me-link').replaceWith(formView.render().$el);
+	},
+
+	uploadAvatar: function(event) {
+		event.preventDefault();
+
+		var model = this.model
+
+		filepicker.setKey("AcXki9SpLRNG0P2Y00ihoz");
+
+		filepicker.pick(
+		  {
+		    mimetypes: ['image/*', 'text/plain'],
+		    container: 'window',
+		    services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
+		  },
+		  function(Blob){
+		  	model.set({ fp_url: Blob.url });
+		  	model.save();
+		  }
+		);
+		
 	}
 });

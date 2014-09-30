@@ -2,6 +2,16 @@
 	<h1 class="text-center"><%= user.get('username') %></h1>
 
 	<div class="col-xs-3 user-left">
+		<div class="avatar-container">
+			<% if(user.get('fp_url')) { %>
+				<img src="<%= user.get('fp_url') %>" height=250 width=250>
+				<a href="#">Upload a new profile picture</a>
+			<% } else { %>
+				<img src="/assets/default-avatar.jpg" height=250 width=250>
+				<a href="#">Upload a profile picture</a>
+			<% } %>
+		</div>
+
 		<h4>About Me</h4>
 		<% if(user.get('about_me')) { %>
 			<p><%= user.get('about_me') %></p>

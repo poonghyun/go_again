@@ -15,19 +15,9 @@ class UsersController < ApplicationController
 		render :new
 	end
 
-	def update
-		@user = User.find(params[:id])
-		@user.update(user_update_params)
-		redirect_to user_url(@user)
-	end
-
 	private
 
 	def user_params
 		params.require(:user).permit(:username, :password)
-	end
-
-	def user_update_params
-		params.require(:user).permit(:fp_url, :about_me)
 	end
 end

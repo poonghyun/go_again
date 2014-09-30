@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u1 = User.create(username: "mike", password: "testing")
+u1 = User.create(username: "mike", password: "testing", fp_url: 'https://www.filepicker.io/api/file/fbcdO6dKSCGPimifqhRW')
 u2 = User.create(username: "jimmy", password: "testing")
 u3 = User.create(username: "eric", password: "testing")
 u4 = User.create(username: "rob", password: "testing")

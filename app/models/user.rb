@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 	has_many :reviews
 	has_many :photos, through: :reviews
 
+	has_attached_file :pc_avatar
+
 	def password=(val)
 		@password = val
 		self.password_digest = BCrypt::Password.create(val)
