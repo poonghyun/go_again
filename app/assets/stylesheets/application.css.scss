@@ -16,10 +16,11 @@
 @import "font-awesome";
 
 
-
 ul {
 	list-style: none;
 }
+
+/* sign in pages */
 
 .image-background-container {
   position:absolute;
@@ -59,24 +60,46 @@ ul {
 	padding-top: 5px;
 }
 
+/* navbar */
 
 #main-navbar {
-	background-color: #3A2BA2;
-
+	background-color: white;
+	height: 52px;
+	border-bottom: thin solid gray;
 }
 
 #navbar-collapse-1 {
-	border-color: #0000CC;
+	border-color: black;
 }
 
+.dropdown-toggle {
+	height: 55px;
+	/*padding-top: 10px;*/
+	margin-top: -57px;
+}
+
+.avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 5%;
+	border: thin solid lightgray;
+}
+
+/* categories */
+
 .categories {
-	padding: 30px;
+	background-color: azure;
+	border-top: thin solid lightgray;
+	border-bottom: thin solid lightgray;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-bottom: 40px;
 }
 
 .category-button {
-	width: 160px;
-	height: 100px;
-	background-color: green;
+	width: 170px;
+	height: 110px;
+	background-color: #009999;
 	margin: 30px;
 	position: relative;
 	border-radius: 5%;
@@ -85,16 +108,16 @@ ul {
 	letter-spacing: 1px;
 	font-weight: 500;
 	transition: all 0.2s;
-	box-shadow: 0 6px #194719;
+	box-shadow: 0 6px #005d5d;
 }
 
 .category-button:hover {
-	box-shadow: 0 4px #194719;
+	box-shadow: 0 4px #005d5d;
 	top: 2px;
 }
 
 .category-button:active {
-	box-shadow: 0 0 #194719;
+	box-shadow: 0 0 #005d5d;
 	top: 6px;
 }
 
@@ -102,7 +125,7 @@ ul {
 .category-button-label {
 	color: white;
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 27px;
 }
 
 .link-span {
@@ -122,6 +145,12 @@ ul {
 	float: left;
 }
 
+
+.discover-container {
+	background: white;
+	height: 550px;
+}
+
 .preview-container {
 	position: relative;
 }
@@ -129,12 +158,6 @@ ul {
 .preview-link:hover {
 	background-color: pink;
 	opacity: 0.3;
-}
-
-.avatar {
-	width: 30px;
-	height: 30px;
-	border-radius: 5%;
 }
 
 .empty-search-result, .business-search-result {
@@ -157,13 +180,15 @@ div#map-browser div.map {
   left:0;
   bottom:0;
   right: 0;
+  border: thin solid black;
 }
 
 .browse-business {
 	float: left;
 	width: 35%;
 	height: 450px;
-	background-color: lightgray;
+	background-color: #C1F25E;
+	border: thin solid lightgray;
 }
 
 .tt-cursor {
@@ -172,4 +197,21 @@ div#map-browser div.map {
 
 #about-me-input {
 	display: block;
+}
+
+.jumbotron {
+  margin-top: -50px;
+  height: 700px;
+  color: black;
+	background: url("/assets/san-francisco.jpg") no-repeat center center fixed;
+	border-bottom: thin solid gray;
+}
+
+.jumbo-subtext {
+	color: white;
+	margin-top: 70px;
+}
+
+form.business-search {
+	text-align: center;
 }

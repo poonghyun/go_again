@@ -6,7 +6,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 	  this.mapOptions = {
 	    zoom: 15,
-	    center: new google.maps.LatLng(37.781014,-122.41142)
+	    center: new google.maps.LatLng(37.7869834,-122.4308177)
 	  };
 
 		this.markers = [];
@@ -21,7 +21,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 		var view = this;
 		setTimeout(function () {
-		  this.debouncedFindBusinesses(this.map.getBounds(), new google.maps.LatLng(37.781014,-122.41142))();
+		  this.debouncedFindBusinesses(this.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177))();
 		}.bind(this), 100)
 
 		return this;
