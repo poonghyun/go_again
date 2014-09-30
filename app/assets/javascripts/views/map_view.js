@@ -52,6 +52,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	initializeMap: function () {
 	  this.map = new google.maps.Map(this.$('.map')[0],
     this.mapOptions);
+
+    google.maps.event.trigger(this.map, "resize");
 	},
 
 	addMarkers: function () {
@@ -73,8 +75,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	    // animation: google.maps.Animation.DROP
 	  });
 
-	  if(!closestMarker) { location.reload(true); }
-
 	  this.markers.push(closestMarker);
 
 	  // place other markers
@@ -93,6 +93,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	  $(".browse-business").html(new GoAgain.Views.BusinessMapShow({
 	  	model: this.model
 	  }).render().$el);
+
+    google.maps.event.trigger(this.map, "resize");
 	},
 
 	findBusinesses: function(bounds, center) {
