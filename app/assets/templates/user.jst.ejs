@@ -6,7 +6,11 @@
 		<% if(user.get('about_me')) { %>
 			<p><%= user.get('about_me') %></p>
 		<% } else { %>
-			<a href="#" class="about-me-link">Make!</a>
+			<% if(user.id === user.get('current_user_id')) { %>
+				<a href="#" class="about-me-link">Make!</a>
+			<% } else { %>
+				<p>Nothing yet!</p>
+			<% } %>
 		<% } %>
 	</div>
 

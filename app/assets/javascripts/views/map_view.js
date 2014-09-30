@@ -87,12 +87,10 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	  }, this);
 
 	  // populate preview
-	  // var model = GoAgain.businesses.getOrFetch(closest.id);
-	  // $(".browse-business").html(new GoAgain.Views.BusinessMapShow({
-	  // 	model: this.model
-	  // }).render().$el);
-
-	  // google.maps.event.trigger(this.map, 'resize');
+	  var model = this.collection.getActive();
+	  $(".browse-business").html(new GoAgain.Views.BusinessMapShow({
+	  	model: this.model
+	  }).render().$el);
 	},
 
 	findBusinesses: function(bounds, center) {

@@ -2,7 +2,7 @@
 <form class="edit-review" role="form">
   <input type="hidden"
          name="review[business_id]"
-         value="<%= review.business_id %>">
+         value="<%= review.get('business_id') %>">
 
   <input type="hidden"
          name="review[id]"
@@ -10,19 +10,19 @@
 
   <div class="form-group">
     <label for="review-stars">Rating</label>
-    <input id="review-stars" type="number" name="review[stars]" value=<%= review.stars %>>
+    <input id="review-stars" type="number" name="review[stars]" value=<%= review.get('stars') %>>
   </div>
 
   <div class="form-group">
     <label for="review-content">Your thoughts</label>
-    <textarea id="review-content" name="review[content]"><%= review.content %></textarea>
+    <textarea id="review-content" name="review[content]"><%= review.get('content') %></textarea>
   </div>
 
   <div class="form-group">
     <label>
     Go again?
 
-    <% if(review.go_again) { %>
+    <% if(review.get('go_again')) { %>
 
     <input type="radio" name="review[go_again]" value="true" checked>Yes
     <input type="radio" name="review[go_again]" value="false">No

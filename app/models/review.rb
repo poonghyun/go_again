@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
-	validates :content, :stars, :user_id, :business_id, :go_again, presence: true
+	validates :content, :stars, :user_id, :business_id, presence: true
 	validates :user_id, uniqueness: { scope: :business_id, message: "user can only review business once" }
+	validates :go_again, :inclusion => {:in => [true, false]}
 
 	belongs_to :user
 	belongs_to :business

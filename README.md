@@ -7,7 +7,6 @@ map:
 
 user-show:
 -move over stuff from rails user show
--about me form
 -update thumbnail in navbar if user has photo
 
 business-show:
@@ -15,7 +14,6 @@ business-show:
 
 new/edit review:
 -validation
--conditional edit/new
 -make prettier
 
 typeahead search:
@@ -49,7 +47,4 @@ average rating stars graphic
 404/other error pages
 infinite reviews scroll, no click
 make stars yellow
-about me empty form validation
-ability to update about me
-only allow user to update their own about me
-maps bug
+edit edge case

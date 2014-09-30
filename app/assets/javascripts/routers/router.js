@@ -39,11 +39,8 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 				if($search.typeahead('val') && (suggestions > 0)) {
 					var b_id = $('.tt-suggestion > .business-search-result').data('b-id');
-					var business = GoAgain.businesses.getOrFetch(b_id);
-					var view = new GoAgain.Views.BusinessShow({
-						model: business
-					});
-					router._swapView(view);
+					var fragmentUrl = "/business/" + b_id;
+					Backbone.history.navigate(fragmentUrl, { trigger: true });
 
 					$search.typeahead('val', '');
 				}

@@ -5,6 +5,7 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		this.collection = this.model.reviews();
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
+		this.listenTo(this.collection, "change", this.render);
 
 		this.collection.each(this.addReview.bind(this));
 	},
@@ -40,12 +41,32 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 			animate: true
 		}).open();
 
-		modal.on("ok", this.okClicked.bind(this));
+		var bView = this;
+
+		modal.on("ok", function() {
+			var params = $("form").serializeJSON();
+			// do validation
+			if(false) {
+
+			} else {
+				bView.okClicked(params);
+			}
+		});
 	},
 
 	editReviewModal: function () {
+		var bView = this;
+
+		var review = new GoAgain.Models.Review();
+		// second time around
+		if(bView.current_user_review) {
+			review.set(this.current_user_review);
+		} else { // first time
+			review = this.collection.get(bView.model.attributes.current_user_review.id);
+		}
+
 		var view = new GoAgain.Views.ReviewEdit({
-			model: this.model.attributes.current_user_review,
+			model: review,
 			business_name: this.model.get('name')
 		});
 
@@ -54,14 +75,14 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 			animate: true
 		}).open();
 
-		var bView = this;
-
 		modal.on("ok", function() {
 			var params = $("form").serializeJSON();
+			// do validation
+			if(false) {
 
-
-
-			bView.okClicked(params);
+			} else {
+				bView.okClicked(params);
+			}
 		});
 	},
 
@@ -70,12 +91,14 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		var review = new GoAgain.Models.Review(params["review"]);
 		review.save({}, {
 			success: function (resp) {
+				// edit
 				if(view.collection.get(resp.id)) {
-					// replace
-				} else {
+					view.collection.get(resp.id).set(params["review"]);
+				} else { // new
 					view.collection.add(review);
-					var a = view.$('.launch-new-review')//.replaceWith('<button class="launch-edit-review">Edit your review</button>');
-					debugger;
+					var $editButton = $('<button class="launch-edit-review">Edit your review</button>');
+					$('.launch-new-review').replaceWith($editButton);
+					view.current_user_review = review.toJSON();
 				}
 			}
 		});
