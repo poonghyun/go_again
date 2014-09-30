@@ -1,5 +1,5 @@
 GoAgain.Views.ReviewShow = Backbone.View.extend({
-	template: JST['review'],
+	template: JST['review/review'],
 
 	initialize: function() {
 		this.listenTo(this.model, "sync", this.render);

@@ -1,5 +1,5 @@
 GoAgain.Views.AboutMeForm = Backbone.View.extend({
-	template: JST['about_me'],
+	template: JST['user/about_me'],
 
 	render: function () {
 		var renderedContent = this.template();

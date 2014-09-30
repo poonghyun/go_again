@@ -11,8 +11,12 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		@user = User.new
-		render :new
+		if current_user
+			redirect_to root_url
+		else
+			@user = User.new
+			render :new
+		end
 	end
 
 	private

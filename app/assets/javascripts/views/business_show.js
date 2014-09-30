@@ -1,5 +1,5 @@
 GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
-	template: JST['business'],
+	template: JST['business/business'],
 
 	initialize: function() {
 		this.collection = this.model.reviews();

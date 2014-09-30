@@ -1,6 +1,11 @@
 <li class="review">
 	<% if(review.get('business')) { %>
 	  <h4><a href="#/business/<%= review.get('business').id %>"><%= review.get('business')['name'] %></a></h4>
+
+	  <% if(review.get('user').id === review.get('current_user_id')) { %>
+		  <button>Add pictures to your review</button>
+	  <% } %>
+
 	  <p>Updated at: <%= (new Date(review.get('updated_at'))).toDateString() %></p>
 
 		<p><% for(var i = 0; i < 5; i++) { %>

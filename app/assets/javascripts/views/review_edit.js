@@ -1,5 +1,5 @@
 GoAgain.Views.ReviewEdit = Backbone.View.extend({
-	template: JST['review_edit'],
+	template: JST['review/review_edit'],
 
 	initialize: function(options) {
 		this.business_name = options.business_name;

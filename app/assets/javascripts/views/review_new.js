@@ -1,5 +1,5 @@
 GoAgain.Views.ReviewNew = Backbone.View.extend({
-	template: JST['review_new'],
+	template: JST['review/review_new'],
 
 	render: function () {
 		var renderedContent = this.template({

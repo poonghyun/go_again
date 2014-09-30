@@ -1,5 +1,5 @@
 GoAgain.Views.BusinessPreview = Backbone.View.extend({
-	template: JST['business_preview'],
+	template: JST['business/business_preview'],
 
 	initialize: function() {
 		this.listenTo(this.model, "sync", this.render);

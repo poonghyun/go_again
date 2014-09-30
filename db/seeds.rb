@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 u1 = User.create(username: "mike", password: "testing", fp_url: 'https://www.filepicker.io/api/file/fbcdO6dKSCGPimifqhRW')
-u2 = User.create(username: "jimmy", password: "testing")
+u2 = User.create(username: "jimmy", password: "testing", fp_url: 'https://www.filepicker.io/api/file/FXuj2BpqTX6J7iLr4Gr4')
 u3 = User.create(username: "eric", password: "testing")
 u4 = User.create(username: "rob", password: "testing")
 u5 = User.create(username: "yusuf", password: "testing")

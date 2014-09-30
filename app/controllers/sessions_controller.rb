@@ -12,7 +12,11 @@ class SessionsController < ApplicationController
 	end
 
 	def new
-		render :new
+		if current_user
+			redirect_to root_url
+		else
+			render :new
+		end
 	end
 
 	def destroy

@@ -73,8 +73,7 @@ ul {
 }
 
 .dropdown-toggle {
-	height: 55px;
-	/*padding-top: 10px;*/
+	height: 54px;
 	margin-top: -57px;
 }
 
@@ -90,10 +89,8 @@ ul {
 .categories {
 	background-color: azure;
 	border-top: thin solid lightgray;
-	border-bottom: thin solid lightgray;
 	padding-left: 35px;
 	padding-right: 35px;
-	padding-bottom: 40px;
 }
 
 .category-button {
@@ -137,8 +134,26 @@ ul {
   z-index: 1;
 }
 
+.all-bus-link {
+	background-color: azure;
+	padding-bottom: 30px;
+	border-bottom: thin solid lightgray;
+}
+
 .review {
 	border-top: thin solid gray;
+}
+
+.recent-activity-container {
+	background-color: lavender;
+}
+
+.recent-activity {
+	width: 90%;
+	margin: 0 auto;
+	border: thin solid black;
+	background-color: white;
+	padding-right: 40px;
 }
 
 .map-container {
@@ -216,6 +231,48 @@ form.business-search {
 	text-align: center;
 }
 
+
+
+.backdrop {
+	background-color: azure;
+}
+
+.user-profile-container {
+	background-color: white;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -30px;
+	border: thin solid gray;
+}
+
 .avatar-container a {
 	display: block;
+	margin-left: 5%;
+	border-bottom: thin solid lightgray;
+	padding-bottom: 15px;
+}
+
+.avatar-container img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	width: 90%;
+}
+
+.about-me-container {
+	padding-top: 5px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.user-header {
+	border-bottom: thin solid gray;
+	padding-bottom: 20px;
+}
+
+.user-reviews-container {
+	border-left: thin solid gray;
+	min-height: 300px;
 }

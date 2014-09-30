@@ -1,5 +1,5 @@
 GoAgain.Views.UserShow = Backbone.CompositeView.extend({
-	template: JST['user'],
+	template: JST['user/user'],
 
 	initialize: function() {
 		this.collection = this.model.reviews();
@@ -58,7 +58,12 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 		  },
 		  function(Blob){
 		  	model.set({ fp_url: Blob.url });
-		  	model.save();
+		  	model.save({},{
+		  		success: function () {
+		  			var newAvatar = '<img src="' + Blob.url + '" class="avatar">';
+		  			$('.avatar').replaceWith(newAvatar);
+		  		}
+		  	});
 		  }
 		);
 		

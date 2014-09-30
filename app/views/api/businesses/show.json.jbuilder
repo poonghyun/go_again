@@ -12,4 +12,5 @@ json.reviews @business.reviews do |review|
 	json.extract! review, :id, :business_id, :content, :stars, :created_at, :updated_at, :go_again
 	json.user review.user
 	json.business review.business
+	json.current_user_id current_user.id
 end
