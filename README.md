@@ -3,7 +3,6 @@ TODO
 map:
 -preview
 -loading animation
--animate pins
 
 user-show:
 -move over stuff from rails user show
@@ -14,7 +13,6 @@ business-show:
 
 new/edit review:
 -validation
--make prettier
 
 typeahead search:
 -center in nav

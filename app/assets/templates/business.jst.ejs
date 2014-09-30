@@ -12,7 +12,9 @@
 	</div>
 <% } %>
 
-<% if(business.reviewed) { %>
+<% debugger %>
+
+<% if(business.get('reviewed')) { %>
 	<button class="launch-edit-review">Edit your review</button>
 <% } else { %>
 	<button class="launch-new-review">Write a review</button>
