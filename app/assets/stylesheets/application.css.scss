@@ -16,6 +16,10 @@
 @import "font-awesome";
 
 
+.all-container {
+	min-width: 500px;
+}
+
 ul {
 	list-style: none;
 }
@@ -144,14 +148,19 @@ ul {
 	border-top: thin solid gray;
 }
 
+.review-list {
+	min-height: 400px;
+}
+
 .recent-activity-container {
 	background-color: lavender;
+	padding-bottom: 30px;
 }
 
 .recent-activity {
 	width: 90%;
 	margin: 0 auto;
-	border: thin solid black;
+	border: thin solid lightgray;
 	background-color: white;
 	padding-right: 40px;
 }
@@ -275,4 +284,20 @@ form.business-search {
 .user-reviews-container {
 	border-left: thin solid gray;
 	min-height: 300px;
+}
+
+
+.footer {
+	height: 80px;
+	width: 100%;
+	background-color: gray;
+	padding-top: 30px;
+	text-align: right;
+	padding-right: 30px;
+}
+
+.footer a {
+	color: white;
+	display: inline-block;
+	margin-left: 30px;
 }

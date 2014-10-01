@@ -39,13 +39,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
   		});
 	  }
 
-		var counter = 0;
-
-		google.maps.event.addListener(this.map, 'bounds_changed', function() {
-			if(counter % 50 === 0) {
-				counter++;
-				return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
-			}
+		google.maps.event.addListener(this.map, 'dragend', function() {
+			return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
 	  }.bind(this));
 	},
 
