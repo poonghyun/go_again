@@ -7,4 +7,9 @@
 	 <%= "$" %>
 	<% }; %></p>
 
-	<p>Average Review: <%= business.get('average_review') %></p>
+	<p>Average Review: <% if(business.get('average_review')) { %>
+		<%= business.get('average_review') %>
+		<% } else { %>
+			No reviews!
+		<% } %>
+		</p>

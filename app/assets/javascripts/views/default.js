@@ -12,10 +12,6 @@ GoAgain.Views.Default = Backbone.CompositeView.extend({
 			model: GoAgain.businesses.getActive()
 		});
 		this.addSubview("#map-browser", mapView);
-		// var businessPreview = new GoAgain.Views.BusinessPreview({
-		// 	model: GoAgain.businesses.getActive()
-		// });
-		// this.addSubview(".browse-business", businessPreview);
 	},
 
 	addReview: function (review) {

@@ -13,4 +13,13 @@ json.reviews @business.reviews do |review|
 	json.user review.user
 	json.business review.business
 	json.current_user_id current_user.id
+
+	json.photos review.photos do |photo|
+		json.extract! photo, :id, :created_at, :fp_url, :caption
+	end
+end
+
+json.photos @business.photos do |photo|
+	json.extract! photo, :id, :created_at, :fp_url, :caption
+	json.review photo.review
 end

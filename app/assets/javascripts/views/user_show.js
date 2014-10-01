@@ -7,6 +7,10 @@ GoAgain.Views.UserShow = Backbone.CompositeView.extend({
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
 		this.listenTo(this.collection, "change", this.render);
 
+		this.photos = this.model.photos();
+		// may need changing
+		// this.listenTo(this.photos, "add", this.render)
+
 		this.collection.each(this.addReview.bind(this));
 	},
 

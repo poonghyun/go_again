@@ -22,11 +22,6 @@ all-businesses
 
 photos
 -add ability to add photos to review
--modify review views
-
-likes
--most liked review per business
--ability to like review
 
 prettify
 

@@ -1,6 +1,8 @@
 if @closest
 	json.closest do
 		json.extract!(@closest, :id, :name, :b_type, :created_at, :updated_at, :price, :x_coord, :y_coord)
+		json.average_review @closest.average_review
+		json.num_reviews @closest.reviews.count
 	end
 end
 

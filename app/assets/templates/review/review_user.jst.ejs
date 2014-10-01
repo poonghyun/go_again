@@ -3,7 +3,7 @@
 	  <h4><a href="#/business/<%= review.get('business').id %>"><%= review.get('business')['name'] %></a></h4>
 
 	  <% if(review.get('user').id === review.get('current_user_id')) { %>
-		  <button>Add pictures to your review</button>
+		  <button class="add-pictures btn" data-review-id="<%= review.id %>">Add pictures to your review</button>
 	  <% } %>
 
 	  <p>Updated at: <%= (new Date(review.get('updated_at'))).toDateString() %></p>
@@ -18,5 +18,13 @@
 
 	  <p>Content: <%= review.get('content') %></p>
 	  <p>Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
+
+	  <ul class="review-pic-list">
+	  	<% if(review.photos()) { %>
+	  		<% review.photos().each(function(photo) { %>
+	  			<img class="review-pic" src="<%= photo.get('fp_url') %>">
+	  		<% }) %>
+	  	<% } %>
+	  </ul>
   <% } %>
 </li>

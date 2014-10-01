@@ -7,6 +7,8 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		this.listenTo(this.collection, "add", this.addReview.bind(this));
 		this.listenTo(this.collection, "change", this.render);
 
+		this.photos = this.model.photos();
+
 		this.collection.each(this.addReview.bind(this));
 	},
 
@@ -96,7 +98,7 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 					view.collection.get(resp.id).set(params["review"]);
 				} else { // new
 					view.collection.add(review);
-					var $editButton = $('<button class="launch-edit-review">Edit your review</button>');
+					var $editButton = $('<button class="launch-edit-review btn">Edit your review</button>');
 					$('.launch-new-review').replaceWith($editButton);
 					view.current_user_review = review.toJSON();
 				}
