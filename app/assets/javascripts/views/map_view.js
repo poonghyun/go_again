@@ -21,14 +21,10 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 		var view = this;
 		setTimeout(function () {
-		  this.debouncedFindBusinesses(this.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177))();
+		  this.findBusinesses(this.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177));
 		}.bind(this), 200)
 
 		return this;
-	},
-
-	debouncedFindBusinesses: function (bounds, center) {
-    return _.debounce(this.findBusinesses.bind(this, bounds, center), 100);
 	},
 
 	bindListeners: function() {
@@ -36,19 +32,22 @@ GoAgain.Views.MapView = Backbone.View.extend({
 			google.maps.event.addListener(this.markers[i], "click", function(marker) {
   			this.map.panTo(marker.latLng);
   			this.findBusinesses(this.map.getBounds(), this.map.getCenter());
-  		});
+  		}.bind(this));
 	  }
 
+	  var counter = 0;
+
 		google.maps.event.addListener(this.map, 'dragend', function() {
-			return this.findBusinesses(this.map.getBounds(), this.map.getCenter());
+			if(counter % 20 === 0) {
+				this.findBusinesses(this.map.getBounds(), this.map.getCenter());
+			}
+			counter++;
 	  }.bind(this));
 	},
 
 	initializeMap: function () {
 	  this.map = new google.maps.Map(this.$('.map')[0],
     this.mapOptions);
-
-    google.maps.event.trigger(this.map, "resize");
 	},
 
 	addMarkers: function () {
@@ -67,7 +66,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	    map: this.map,
 	    title: closest.get('name'),
 	    icon: 'http://maps.google.com/mapfiles/ms/micons/yellow-dot.png'
-	    // animation: google.maps.Animation.DROP
 	  });
 
 	  this.markers.push(closestMarker);
@@ -88,8 +86,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	  $(".browse-business").html(new GoAgain.Views.BusinessMapShow({
 	  	model: this.model
 	  }).render().$el);
-
-    google.maps.event.trigger(this.map, "resize");
 	},
 
 	findBusinesses: function(bounds, center) {
