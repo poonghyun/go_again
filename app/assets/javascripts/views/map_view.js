@@ -2,7 +2,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	template: JST['map_view'],
 
 	initialize: function (options) {
-		this.listenTo(this.collection, "sync", this.addMarkers);
+		var view = this;
+		this.listenTo(this.collection, "sync", _.throttle(view.addMarkers, 100));
 
 	  this.mapOptions = {
 	    zoom: 15,
