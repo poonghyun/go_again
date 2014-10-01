@@ -22,6 +22,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		var view = this;
 		setTimeout(function () {
 		  this.findBusinesses(this.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177));
+		  google.maps.event.trigger(this.map, 'resize');
 		}.bind(this), 200)
 
 		return this;
