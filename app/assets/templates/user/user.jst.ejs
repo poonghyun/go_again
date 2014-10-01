@@ -1,41 +1,43 @@
 <div class="backdrop">
-	<div class="row user-profile-container">
-		<h1 class="text-center user-header"><%= user.get('username') %></h1>
+	<div class="user-page">
+		<div class="row user-profile-container">
+			<h1 class="text-center user-header"><%= user.get('username') %></h1>
 
-		<div class="col-xs-3 user-left">
-			<div class="avatar-container">
-				<% if(user.get('fp_url')) { %>
-					<img src="<%= user.get('fp_url') %>">
-					<% if(user.id === user.get('current_user_id')) { %>
-						<a href="#">Upload a new profile picture</a>
-					<% } %>
-				<% } else { %>
-					<img src="/assets/default-avatar.jpg">
-					<% if(user.id === user.get('current_user_id')) { %>
-						<a href="#">Upload a profile picture</a>
-					<% } %>
-				<% } %>
-			</div>
-
-			<div class="about-me-container">
-				<h4>About Me</h4>
-				<% if(user.get('about_me')) { %>
-					<p><%= user.get('about_me') %></p>
-				<% } else { %>
-					<% if(user.id === user.get('current_user_id')) { %>
-						<a href="#" class="about-me-link">Make!</a>
+			<div class="col-xs-3 user-left">
+				<div class="avatar-container">
+					<% if(user.get('fp_url')) { %>
+						<img src="<%= user.get('fp_url') %>">
+						<% if(user.id === user.get('current_user_id')) { %>
+							<a href="#">Upload a new profile picture</a>
+						<% } %>
 					<% } else { %>
-						<p>Nothing yet!</p>
+						<img src="/assets/default-avatar.jpg">
+						<% if(user.id === user.get('current_user_id')) { %>
+							<a href="#">Upload a profile picture</a>
+						<% } %>
 					<% } %>
-				<% } %>
+				</div>
+
+				<div class="about-me-container">
+					<h4>About Me</h4>
+					<% if(user.get('about_me')) { %>
+						<p><%= user.get('about_me') %></p>
+					<% } else { %>
+						<% if(user.id === user.get('current_user_id')) { %>
+							<a href="#" class="about-me-link">Make!</a>
+						<% } else { %>
+							<p>Nothing yet!</p>
+						<% } %>
+					<% } %>
+				</div>
 			</div>
-		</div>
 
-		<div class="col-xs-9 user-reviews-container">
-			<h3 class="text-right">Reviews</h3>
-		  <ul class="review-list">
+			<div class="col-xs-9 user-reviews-container">
+				<h3 class="text-right">Reviews</h3>
+			  <ul class="review-list">
 
-		  </ul>
+			  </ul>
+			</div>
 		</div>
 	</div>
 </div>

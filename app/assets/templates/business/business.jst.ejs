@@ -1,37 +1,38 @@
-<div class="business-show">
-	<h1 class="text-center"><%= business.get('name') %></h1>
 
-	<% if(business.get('name')) { %>
-		<div class="header-container">
-			<div class="map-container">
-				<iframe
-				  frameborder="0" style="border:0"
-				  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY
-				    &q=<%= business.get('name').replace(/ /g,'+') %>,San+Francisco+CA">
-				</iframe>
-			</div>
-			<div class="business-photo-list">
-				<% if(business.photos().length) { %>
-					<% business.photos().each(function(photo) { %>
-						<img class="header-photos" src="<%= photo.get('fp_url') %>">
-					<% }); %>
-				<% } else { %>
-					<p class="no-photos">No photos!</p>
-				<% } %>
-			</div>
-		</div>
-	<% } %>
+	<div class="business-show">
+		<h1 class="text-center"><%= business.get('name') %></h1>
 
-	<div class="business-reviews-container">
-		<% if(business.get('reviewed')) { %>
-			<button class="launch-edit-review btn">Edit your review</button>
-		<% } else { %>
-			<button class="launch-new-review btn">Write a review</button>
+		<% if(business.get('name')) { %>
+			<div class="header-container">
+				<div class="map-container">
+					<iframe
+					  frameborder="0" style="border:0"
+					  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY
+					    &q=<%= business.get('name').replace(/ /g,'+') %>,San+Francisco+CA">
+					</iframe>
+				</div>
+				<div class="business-photo-list">
+					<% if(business.photos().length) { %>
+						<% business.photos().each(function(photo) { %>
+							<img class="header-photos" src="<%= photo.get('fp_url') %>">
+						<% }); %>
+					<% } else { %>
+						<p class="no-photos">No photos!</p>
+					<% } %>
+				</div>
+			</div>
 		<% } %>
 
-		<h3>Reviews</h3>
-	  <ul class="review-list">
+		<div class="business-reviews-container">
+			<% if(business.get('reviewed')) { %>
+				<button class="launch-edit-review btn">Edit your review</button>
+			<% } else { %>
+				<button class="launch-new-review btn">Write a review</button>
+			<% } %>
 
-	  </ul>
+			<h3>Reviews</h3>
+		  <ul class="review-list">
+
+		  </ul>
+		</div>
 	</div>
-</div>

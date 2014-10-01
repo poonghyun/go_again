@@ -95,6 +95,7 @@ ul {
 	border-top: thin solid lightgray;
 	padding-left: 35px;
 	padding-right: 35px;
+	padding-bottom: 20px;
 }
 
 .category-button {
@@ -318,6 +319,7 @@ form.business-search {
 	background-color: azure;
 	margin-top: -30px;
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .header-container {
@@ -375,4 +377,22 @@ form.business-search {
 	margin-top: 120px;
 	text-align: center;
 	font-size: 200%;
+}
+
+.logo {
+	height: 30px;
+	margin-top: -5px;
+}
+
+.category-page {
+	min-height: 600px;
+}
+
+.user-page {
+	min-height: 600px;
+	padding-bottom: 20px;
+}
+
+.business-page {
+	padding-bottom: 20px;
 }
