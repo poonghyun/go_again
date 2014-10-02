@@ -6,7 +6,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 	  this.mapOptions = {
 	    zoom: 15,
-	    center: new google.maps.LatLng(37.7846771,-122.4203893)
+	    center: new google.maps.LatLng(37.7851859,-122.421548)
 	  };
 
 		this.markers = [];
@@ -30,9 +30,11 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	addAndBind: function () {
 		google.maps.event.trigger(this.map, "resize");
 
-		this.addMarkers();
 		setTimeout(function() {
-			this.bindListeners();
+			this.addMarkers();
+			setTimeout(function() {
+				this.bindListeners();
+			}.bind(this), 300)
 		}.bind(this), 300)
 	},
 
