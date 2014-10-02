@@ -21,9 +21,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 		var view = this;
 		setTimeout(function () {
-		  this.findBusinesses(this.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177));
-		  google.maps.event.trigger(this.map, 'resize');
-		}.bind(this), 200)
+		  view.findBusinesses(view.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177));
+		}, 1500)
 
 		return this;
 	},
@@ -91,11 +90,14 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 	findBusinesses: function(bounds, center) {
 		var xRange = bounds.Ea.k + "," + bounds.Ea.j;
-		var yRange = bounds.ua.k + "," + bounds.ua.j;
+		var yRange = bounds.va.k + "," + bounds.va.j;
 		var centerString = center.k + "," + center.B;
-    this.collection.fetch({data: { query: [xRange, yRange, centerString] }}).then(function() {
-			this.bindListeners();
-			google.maps.event.trigger(this.map, 'resize');
-    }.bind(this));
+
+		var view = this;
+
+    view.collection.fetch({data: { query: [xRange, yRange, centerString] }}).then(function() {
+			view.bindListeners();
+			google.maps.event.trigger(view.map, 'resize');
+    });
 	}
 });

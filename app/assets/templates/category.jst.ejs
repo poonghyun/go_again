@@ -1,10 +1,12 @@
 <div class="category-page">
-	<h1><%= category.replace(/&/, " & ").replace(/([a-z])([A-Z])/, function(p1, p2, p3) {
-		return p2 + " " + p3;
-	}) %></h1>
+	<div class="category-inner-container">
+		<h1 class="text-center"><%= category.replace(/&/, " & ").replace(/([a-z])([A-Z])/, function(p1, p2, p3) {
+			return p2 + " " + p3;
+		}) %></h1>
 
-	<a href="/">Back</a>
+		<a class="back-link" href="/">Back</a>
 
-	<ul class="business-preview-list">
-	</ul>
+		<div class="business-preview-list">
+		</div>
+	</div>
 </div>

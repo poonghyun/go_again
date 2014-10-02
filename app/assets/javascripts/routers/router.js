@@ -37,9 +37,12 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	home: function() {
+
 		var view = new GoAgain.Views.Default({
 			collection: GoAgain.allReviews
 		});
+
+		// GoAgain.businesses.fetch();
 
 		GoAgain.allReviews.fetch();
 

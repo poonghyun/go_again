@@ -11,6 +11,7 @@ GoAgain.Views.Default = Backbone.CompositeView.extend({
 			collection: GoAgain.businesses,
 			model: GoAgain.businesses.getActive()
 		});
+
 		this.addSubview("#map-browser", mapView);
 	},
 

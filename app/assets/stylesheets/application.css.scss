@@ -173,14 +173,6 @@ ul {
 	height: 550px;
 }
 
-.preview-container {
-	position: relative;
-}
-
-.preview-link:hover {
-	background-color: pink;
-	opacity: 0.3;
-}
 
 #map-browser {
 	float: left;
@@ -432,7 +424,16 @@ form.business-search {
 }
 
 .category-page {
+	background-color: #FF8383;
+	margin-top: -30px;
+	padding-top: 20px;
+}
+
+.category-inner-container {
+	background-color: white;
 	min-height: 600px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .user-page {
@@ -448,4 +449,28 @@ form.business-search {
 	display: inline-block;
 	padding: 2px;
 	margin-bottom: 5px;
+}
+
+.back-link {
+	display: block;
+	text-align: center;
+}
+
+.business-preview-list {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.preview-container {
+	position: relative;
+	width: 45%;
+	margin-left: 5%;
+	border: thin solid black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.preview-link:hover {
+	background-color: pink;
+	opacity: 0.3;
 }

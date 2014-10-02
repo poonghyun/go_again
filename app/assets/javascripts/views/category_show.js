@@ -14,8 +14,6 @@ GoAgain.Views.CategoryShow = Backbone.CompositeView.extend({
 			category: this.category
 		});
 
-		debugger;
-
 		this.$el.html(renderedContent);
 		this.attachSubviews();
 
@@ -23,7 +21,6 @@ GoAgain.Views.CategoryShow = Backbone.CompositeView.extend({
 	},
 
 	addBusiness: function(business) {
-		debugger;
 		var businessPreview = new GoAgain.Views.BusinessPreview({
 			model: business
 		});
