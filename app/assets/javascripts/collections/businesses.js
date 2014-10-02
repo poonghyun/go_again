@@ -2,6 +2,13 @@ GoAgain.Collections.Businesses = Backbone.Collection.extend({
 	url: "/api/businesses",
 	model: GoAgain.Models.Business,
 
+	// initialize: function(options) {
+	// 	// if(options && options.category) {
+	// 	// 	this.category = options.category;
+	// 	// 	debugger;
+	// 	// }
+	// },
+
 	getOrFetch: function(id) {
 		var business = this.get(id);
 
@@ -30,7 +37,7 @@ GoAgain.Collections.Businesses = Backbone.Collection.extend({
 			delete response.closest;
 		}
 
-		return response.others;
+		return response.others || response;
 	}
 });
 

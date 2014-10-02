@@ -14,24 +14,6 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 		
 		var router = this;
 
-    // $search.keyup(function(e){
-    //   if(e.keyCode === 13 && $search.typeahead('val')) {
-    //     // grab first suggestion's id
-    //     var b_id = $('.tt-suggestion > .business-search-result').data('b-id');
-    //     // look up business and create model
-				// var business = GoAgain.businesses.getOrFetch(b_id);
-
-				// var view = new GoAgain.Views.BusinessShow({
-				// 	model: business
-				// });
-    //     // swap view for business show
-    //     router._swapView(view);
-    //     $search.typeahead('val', '');
-    //   } else {
-    //   	// select first suggestion
-    //   }
-    // })
-
 		$search.keyup(function(e) {
 			if(e.keyCode === 13) {
 
@@ -75,17 +57,26 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	categoryShow: function(category) {
-		GoAgain.businesses.fetch();
+		// GoAgain.businesses.fetch();
 
-		var catModel = new GoAgain.Models.Category({
-			category: category
-		});
+		// var catModel = new GoAgain.Models.Category({
+		// 	category: category
+		// });
 
-		catModel.fetch();
+		// catModel.fetch();
+
+		// var view = new GoAgain.Views.CategoryShow({
+		// 	model: catModel
+		// });
+
+		var categoryCollection = new GoAgain.Collections.Businesses();
 
 		var view = new GoAgain.Views.CategoryShow({
-			model: catModel
-		});
+			category: category,
+			collection: categoryCollection
+		})
+
+		categoryCollection.fetch({ data: { category: category }});
 
 		this._swapView(view);
 	},

@@ -1,28 +1,15 @@
 TODO
 
-map:
--preview
+map business preview
+photo gallery for business show
+new/edit validation and edge case
+categories show
 
-business-show:
--loading animation
+css, animations
 
-new/edit review:
--validation
+review ordering
+average rating, graphics
+404 page
+star picker for new/edit review
 
-typeahead search:
--response to enter key (clear on enter as well)
--styles and highlight first
-
-categories
--make show better
-
-prettify
-
-reverse review ordering
-include average rating
-average rating stars graphic
-404/other error pages
-infinite reviews scroll, no click
-make stars yellow
-edit edge case
-
+more seeds
