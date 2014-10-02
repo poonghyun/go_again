@@ -42,8 +42,6 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 			collection: GoAgain.allReviews
 		});
 
-		// GoAgain.businesses.fetch();
-
 		GoAgain.allReviews.fetch();
 
 		this._swapView(view);
@@ -60,18 +58,6 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 	},
 
 	categoryShow: function(category) {
-		// GoAgain.businesses.fetch();
-
-		// var catModel = new GoAgain.Models.Category({
-		// 	category: category
-		// });
-
-		// catModel.fetch();
-
-		// var view = new GoAgain.Views.CategoryShow({
-		// 	model: catModel
-		// });
-
 		var categoryCollection = new GoAgain.Collections.Businesses();
 
 		var view = new GoAgain.Views.CategoryShow({

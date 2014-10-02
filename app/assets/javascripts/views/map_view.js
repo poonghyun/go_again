@@ -2,11 +2,11 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	template: JST['map_view'],
 
 	initialize: function (options) {
-		this.listenTo(this.collection, "sync", this.addMarkers);
+		this.listenTo(this.collection, "sync", this.addAndBind);
 
 	  this.mapOptions = {
 	    zoom: 15,
-	    center: new google.maps.LatLng(37.7869834,-122.4308177)
+	    center: new google.maps.LatLng(37.781014,-122.41142)
 	  };
 
 		this.markers = [];
@@ -16,15 +16,22 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		var renderedContent = this.template();
 
 		this.$el.html(renderedContent);
-    
+
 		this.initializeMap();
 
-		var view = this;
-		setTimeout(function () {
-		  view.findBusinesses(view.map.getBounds(), new google.maps.LatLng(37.7869834,-122.4308177));
-		}, 1500)
+		setTimeout(function() {
+			var view = this;
+			view.findBusinesses(view.map.getBounds(), view.map.getCenter());
+		}.bind(this), 300)
 
 		return this;
+	},
+
+	addAndBind: function () {
+		this.addMarkers();
+		setTimeout(function() {
+			this.bindListeners();
+		}.bind(this), 300)
 	},
 
 	bindListeners: function() {
@@ -46,8 +53,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	},
 
 	initializeMap: function () {
-	  this.map = new google.maps.Map(this.$('.map')[0],
-    this.mapOptions);
+	  this.map = new google.maps.Map(this.$('.map')[0], this.mapOptions);
 	},
 
 	addMarkers: function () {
@@ -95,9 +101,6 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 		var view = this;
 
-    view.collection.fetch({data: { query: [xRange, yRange, centerString] }}).then(function() {
-			view.bindListeners();
-			google.maps.event.trigger(view.map, 'resize');
-    });
+		view.collection.fetch({data: { query: [xRange, yRange, centerString] }})
 	}
 });
