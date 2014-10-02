@@ -46,13 +46,11 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		var bView = this;
 
 		modal.on("ok", function() {
-			var params = $("form").serializeJSON();
-			// do validation
-			if(false) {
+			modal.preventClose();
 
-			} else {
-				bView.okClicked(params);
-			}
+			var params = $("form").serializeJSON();
+
+			bView.okClicked(params, modal);
 		});
 	},
 
@@ -78,21 +76,21 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 		}).open();
 
 		modal.on("ok", function() {
-			var params = $("form").serializeJSON();
-			// do validation
-			if(false) {
+			modal.preventClose();
 
-			} else {
-				bView.okClicked(params);
-			}
+			var params = $("form").serializeJSON();
+			
+			bView.okClicked(params, modal);
 		});
 	},
 
-	okClicked: function (params) {
+	okClicked: function (params, modal) {
 		var view = this;
 		var review = new GoAgain.Models.Review(params["review"]);
 		review.save({}, {
 			success: function (resp) {
+				modal.close();
+
 				// edit
 				if(view.collection.get(resp.id)) {
 					view.collection.get(resp.id).set(params["review"]);
@@ -101,6 +99,19 @@ GoAgain.Views.BusinessShow = Backbone.CompositeView.extend({
 					var $editButton = $('<button class="launch-edit-review btn">Edit your review</button>');
 					$('.launch-new-review').replaceWith($editButton);
 					view.current_user_review = review.toJSON();
+				}
+			},
+			error: function(model, resp) {
+				var errorJSON = resp.responseJSON;
+				$('.form-group').removeClass('has-error');
+				if(errorJSON.content) {
+					$('#review-content').parent().addClass('has-error');
+				}
+				if(errorJSON.stars) {
+					$('#review-stars').parent().addClass('has-error');
+				}
+				if(errorJSON.go_again) {
+					$('#review-ga').parent().addClass('has-error');
 				}
 			}
 		});

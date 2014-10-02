@@ -9,17 +9,17 @@
          value="<%= review.id %>">
 
   <div class="form-group">
-    <label for="review-stars">Rating</label>
-    <input id="review-stars" type="number" name="review[stars]" value=<%= review.get('stars') %>>
+    <label class="control-label" for="review-stars">Rating</label>
+    <input id="review-stars" type="number" name="review[stars]" class="form-control" value=<%= review.get('stars') %>>
   </div>
 
   <div class="form-group">
-    <label for="review-content">Your thoughts</label>
-    <textarea id="review-content" name="review[content]"><%= review.get('content') %></textarea>
+    <label class="control-label" for="review-content">Your thoughts</label>
+    <textarea id="review-content" class="form-control" name="review[content]"><%= review.get('content') %></textarea>
   </div>
 
   <div class="form-group">
-    <label>
+    <label class="control-label">
     Go again?
 
     <% if(review.get('go_again')) { %>
