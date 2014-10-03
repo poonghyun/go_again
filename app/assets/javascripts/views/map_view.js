@@ -28,27 +28,16 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		return this;
 	},
 
-	// debouncedRender: function() {
-	// 	var view = this;
-	// 	return _.debounce(view.render, 100);
-	// },
-
 	addAndBind: function () {
-		debugger;
 		google.maps.event.trigger(this.map, "resize");
 
 		setTimeout(function() {
 			this.addMarkers();
 			setTimeout(function() {
 				this.bindListeners();
-			}.bind(this), 300)
-		}.bind(this), 300)
+			}.bind(this), 200)
+		}.bind(this), 200)
 	},
-
-	// debouncedAddBind: function () {
-	// 	var view = this;
-	// 	_.debounce(view.addAndBind, 100)();
-	// },
 
 	bindListeners: function() {
 	  for(var i = 0; i < this.markers.length; i++) {
