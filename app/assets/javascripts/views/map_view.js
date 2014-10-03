@@ -38,6 +38,11 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		}.bind(this), 300)
 	},
 
+	// debouncedAddBind: function () {
+	// 	var view = this;
+	// 	return _.debounce(view.addAndBind, 100);
+	// },
+
 	bindListeners: function() {
 	  for(var i = 0; i < this.markers.length; i++) {
 			google.maps.event.addListener(this.markers[i], "click", function(marker) {

@@ -8,6 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap-lightbox
+ *= require jquery.ui.all
  *= require_self
  *= require_tree .
  */
@@ -361,7 +363,6 @@ form.business-search {
 }
 
 .review-pic-list {
-	
 }
 
 .review-pic {
@@ -442,7 +443,7 @@ form.business-search {
 }
 
 .category-page {
-	background-color: #FF8383;
+	/*background-color: #FF8383;*/
 	margin-top: -30px;
 	padding-top: 20px;
 }
@@ -485,14 +486,18 @@ form.business-search {
 }
 
 .preview-link:hover {
-	background-color: lightblue;
-	opacity: 0.3;
+	/*background-color: lightblue;*/
+	/*opacity: 0.3;*/
 }
 
 .pc-inner {
 	margin: 10px;
 	border: thin solid lightgray;
 	height: 250px;
+}
+
+.pc-inner:hover {
+	box-shadow: 3px 3px 2px lightgray;
 }
 
 .star-review-image {
@@ -507,6 +512,7 @@ form.business-search {
 
 .add-pictures {
 	float: right;
+	margin-top: -40px;
 }
 
 .rr-header {
@@ -523,4 +529,36 @@ form.business-search {
 
 .cat-description {
 	text-align: center;
+}
+
+.jumbotron h1 {
+	/*color: white;*/
+	text-shadow: 0 0 3px #fff;
+}
+
+.jumbotron h3 {
+	text-shadow: 0 0 2px #888;
+}
+
+li.review {
+	border: thin solid lightgray;
+	margin-right: 5%;
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: center;
+}
+
+.business-reviews-container h3 {
+	text-align: center;
+	width: 300px;
+	height: 50px;
+	margin: 0 auto;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+.user-reviews-controller h4 {
+	width: 300px;
+	height: 50px;
+	margin: 0 auto;
 }

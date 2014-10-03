@@ -11,13 +11,17 @@
 
 	  <p>Updated at: <%= (new Date(review.get('updated_at'))).toDateString() %></p>
 
-		<p><% for(var i = 0; i < 5; i++) { %>
-			<% if(i < review.get('stars')) { %>
-				<span class="glyphicon glyphicon-star"></span>
-			<% } else { %>
-				<span class="glyphicon glyphicon-star-empty"></span>
-			<% } %>
-		<% } %></p>
+		<% if(review.get('stars') > 4.5) { %>
+			<img class="star-review-image" src="/assets/5stars.png">
+		<% } else if (review.get('stars') > 3.5) { %>
+			<img class="star-review-image" src="/assets/4stars.png">
+		<% } else if (review.get('stars') > 2.5) { %>
+			<img class="star-review-image" src="/assets/3stars.png">
+		<% } else if (review.get('stars') > 1.5) { %>
+			<img class="star-review-image" src="/assets/2stars.png">
+		<% } else { %>
+			<img class="star-review-image" src="/assets/1star.png">
+		<% } %>
 
 	  <p>Content: <%= review.get('content') %></p>
 	  <p>Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>

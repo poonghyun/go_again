@@ -67,7 +67,9 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 
 		categoryCollection.fetch({ data: { category: category }});
 
-		this._swapView(view);
+		setTimeout(function() {
+			this._swapView(view);
+		}.bind(this), 250);
 	},
 
 	businessShow: function(id) {
@@ -77,7 +79,9 @@ GoAgain.Routers.Router = Backbone.Router.extend({
 			model: business
 		});
 
-		this._swapView(view);
+		setTimeout(function() {
+			this._swapView(view);
+		}.bind(this), 250);
 	},
 
 	userShow: function(id) {

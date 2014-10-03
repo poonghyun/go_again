@@ -34,7 +34,12 @@ GoAgain.Views.Default = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"click .get-more-reviews": "getMoreReviews"
+		"click .get-more-reviews": "getMoreReviews",
+		"click .link-span": "explode"
+	},
+
+	explode: function (event) {
+		$(event.target).parent().parent().toggle("explode", { pieces: 49 });
 	},
 
 	getMoreReviews: function(event) {

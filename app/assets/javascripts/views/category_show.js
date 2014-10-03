@@ -25,5 +25,13 @@ GoAgain.Views.CategoryShow = Backbone.CompositeView.extend({
 			model: business
 		});
 		this.addSubview(".business-preview-list", businessPreview);
+	},
+
+	events: {
+		"click .link-span": "explode"
+	},
+
+	explode: function(event) {
+		$(event.target).parent().parent().parent().toggle("explode", { pieces: 49 });
 	}
 });
