@@ -11,31 +11,31 @@
 	<h3><a href="#/business/<%= business.id %>"><%= business.get('name') %></a></h3>
 
 	<div class="bb-sub">
-		<p><% for(var i = 0; i < business.get('price'); i++) { %>
-		 <%= "$" %>
-		<% }; %> — <a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
+		<% if(business.get('b_type')) { %>
+			<p><% for(var i = 0; i < business.get('price'); i++) { %>
+			 <%= "$" %>
+			<% }; %> — <a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
 
 
+			<% if(business.get('average_review')) { %>
+				<% if(business.get('average_review') > 4.5) { %>
+					<img class="star-review-image star-map" src="/assets/5stars.png">
+				<% } else if (business.get('average_review') > 3.5) { %>
+					<img class="star-review-image star-map" src="/assets/4stars.png">
+				<% } else if (business.get('average_review') > 2.5) { %>
+					<img class="star-review-image star-map" src="/assets/3stars.png">
+				<% } else if (business.get('average_review') > 1.5) { %>
+					<img class="star-review-image star-map" src="/assets/2stars.png">
+				<% } else { %>
+					<img class="star-review-image star-map" src="/assets/1star.png">
+				<% } %>
 
-		<% if(business.get('average_review')) { %>
-			<% if(business.get('average_review') > 4.5) { %>
-				<img class="star-review-image star-map" src="/assets/5stars.png">
-			<% } else if (business.get('average_review') > 3.5) { %>
-				<img class="star-review-image star-map" src="/assets/4stars.png">
-			<% } else if (business.get('average_review') > 2.5) { %>
-				<img class="star-review-image star-map" src="/assets/3stars.png">
-			<% } else if (business.get('average_review') > 1.5) { %>
-				<img class="star-review-image star-map" src="/assets/2stars.png">
-			<% } else { %>
-				<img class="star-review-image star-map" src="/assets/1star.png">
-			<% } %>
-
-			<p><%= business.get('num_reviews') %> reviews</p>
-
+				<p><%= business.get('num_reviews') %> reviews</p>
 
 
 			<% } else { %>
 				<p>No reviews!</p>
 			<% } %>
+		<% } %>
 	</div>
 
