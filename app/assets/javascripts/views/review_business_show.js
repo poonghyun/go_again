@@ -19,7 +19,8 @@ GoAgain.Views.ReviewBusinessShow = Backbone.View.extend({
 	},
 
 	events: {
-		"click button.add-pictures": "addPictures"
+		"click button.add-pictures": "addPictures",
+		"click .fancybox": "fancybox"
 	},
 
 	addPictures: function (event) {
@@ -47,5 +48,15 @@ GoAgain.Views.ReviewBusinessShow = Backbone.View.extend({
 				})
 			}
 		);
+	},
+
+	fancybox: function (event) {
+		event.preventDefault();
+
+		var url = $(event.currentTarget).attr('href');
+
+		$.fancybox.open({
+			href: url
+		});
 	}
 });

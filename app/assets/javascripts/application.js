@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.ui.all
+//= require jquery.ui.effect-explode
 //= require jquery_ujs
 //= require jquery.serializejson
 //= require underscore
@@ -20,7 +20,7 @@
 //= require backbone.bootstrap-modal
 //= require typeahead.bundle
 //= require handlebars-1.0.rc.1.min
-//= require bootstrap-lightbox
+//= require jquery.fancybox.pack
 //= require go_again
 //= require_tree ../templates
 //= require_tree ./utils

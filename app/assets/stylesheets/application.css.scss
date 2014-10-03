@@ -8,8 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap-lightbox
  *= require jquery.ui.all
+ *= require jquery.fancybox
  *= require_self
  *= require_tree .
  */
@@ -19,7 +19,7 @@
 
 
 .all-container {
-	min-width: 500px;
+	min-width: 700px;
 }
 
 ul {

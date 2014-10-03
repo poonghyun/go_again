@@ -91,6 +91,8 @@ r33 = Review.create(content: "A bit overpriced. The maple dog was good though.",
 r34 = Review.create(content: "It was a little shabby, don't know if I'll come back here.", stars: 2, user_id: 8, business_id: 24, go_again: true)
 	r34.toggle!(:go_again)
 r35 = Review.create(content: "How swole is too swole? That's a trick question.", stars: 4, user_id: 12, business_id: 27, go_again: true)
+r36 = Review.create(content: "Work out yeah", stars: 3, user_id: 4, business_id: 27, go_again: true)
+r37 = Review.create(content: "I like chilling out here on the weekends", stars: 5, user_id: 9, business_id: 21, go_again: true)
 
 
 p1 = Photo.create(fp_url: "https://www.filepicker.io/api/file/6UBDkLpR3WUEeOKbVAA3", review_id: 1)
@@ -106,3 +108,5 @@ p10 = Photo.create(fp_url: "https://www.filepicker.io/api/file/Z3Sf8mmkTDOE76I72
 p11 = Photo.create(fp_url: "https://www.filepicker.io/api/file/r4YDKyY4QHGNhzR8UOCV", review_id: 34)
 p12 = Photo.create(fp_url: "https://www.filepicker.io/api/file/0phXkTGOQhGCHGXUaoNc", review_id: 9)
 p13 = Photo.create(fp_url: "https://www.filepicker.io/api/file/9MopI0VbTYuc5QZ6mCo4", review_id: 35)
+p14 = Photo.create(fp_url: "https://www.filepicker.io/api/file/rPl1sJrRcCvQAf2riI0n", review_id: 36)
+p15 = Photo.create(fp_url: "https://www.filepicker.io/api/file/jEDWpGMTbunl46widBqp", review_id: 37)

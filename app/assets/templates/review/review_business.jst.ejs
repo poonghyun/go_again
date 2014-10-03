@@ -29,7 +29,7 @@
 	  <ul class="review-pic-list">
 	  	<% if(review.photos()) { %>
 	  		<% review.photos().each(function(photo) { %>
-	  			<img class="review-pic" src="<%= photo.get('fp_url') %>">
+  				<a class="fancybox" href="<%= photo.get('fp_url') %>"><img class="review-pic" src="<%= photo.get('fp_url') %>"></a>
 	  		<% }) %>
 	  	<% } %>
 	  </ul>

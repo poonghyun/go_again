@@ -15,6 +15,8 @@ GoAgain.Views.ReviewUserShow = Backbone.View.extend({
 
 		this.$el.html(renderedContent);
 
+	  this.$(".fancybox").fancybox();
+
 		return this;
 	},
 

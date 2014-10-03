@@ -16,3 +16,8 @@ redesign css
 better typeahead
 ability to edit about me
 refactor
+
+-----
+
+more styling
+modal photo display
