@@ -160,7 +160,7 @@ ul {
 }
 
 .recent-activity {
-	width: 90%;
+	width: 50%;
 	margin: 0 auto;
 	border: thin solid lightgray;
 	background-color: white;
@@ -204,8 +204,7 @@ div#map-browser div.map {
 
 .browse-business img {
 	width: 100%;
-	height: 65%;
-	max-height: 65%;
+	height: 320px;
 }
 
 .bb-sub {
@@ -403,9 +402,9 @@ form.business-search {
 .business-photo-list {
 	overflow-x: scroll;
   overflow-y: hidden;
+  white-space:nowrap;
   height: 330px;
   margin-top: 10px;
-  white-space:nowrap;
   width: 70%;
   margin-left: 2%;
   display: inline-block;
@@ -492,4 +491,15 @@ form.business-search {
 .preview-link:hover {
 	background-color: pink;
 	opacity: 0.3;
+}
+
+.star-review-image {
+	display: block;
+	height: 16px !important;
+	width: 90px !important;
+	margin: 0 auto;
+}
+
+.add-pictures {
+	float: right;
 }

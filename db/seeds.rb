@@ -88,3 +88,4 @@ p2 = Photo.create(fp_url: "https://www.filepicker.io/api/file/HVnGlto1T7KlR0Toym
 p3 = Photo.create(fp_url: "https://www.filepicker.io/api/file/9dH29uYIQXOuatkRZrWH", review_id: 28)
 p4 = Photo.create(fp_url: "https://www.filepicker.io/api/file/gb9t4yjNRWHDPGgdlm7g", review_id: 29)
 p5 = Photo.create(fp_url: "https://www.filepicker.io/api/file/IQzsetO8TbiEKUdgZwMS", review_id: 30)
+p6 = Photo.create(fp_url: "https://www.filepicker.io/api/file/43C4WatTdeOW4uOW7XMU", review_id: 3)

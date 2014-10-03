@@ -15,11 +15,27 @@
 		 <%= "$" %>
 		<% }; %> — <a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
 
-		<p><% if(business.get('average_review')) { %>
-			Average Rating: <%= business.get('average_review') %>, <%= business.get('num_reviews') %> reviews
+
+
+		<% if(business.get('average_review')) { %>
+			<% if(business.get('average_review') > 4.5) { %>
+				<img class="star-review-image" src="/assets/5stars.png">
+			<% } else if (business.get('average_review') > 3.5) { %>
+				<img class="star-review-image" src="/assets/4stars.png">
+			<% } else if (business.get('average_review') > 2.5) { %>
+				<img class="star-review-image" src="/assets/3stars.png">
+			<% } else if (business.get('average_review') > 1.5) { %>
+				<img class="star-review-image" src="/assets/2stars.png">
 			<% } else { %>
-				No reviews!
+				<img class="star-review-image" src="/assets/1star.png">
 			<% } %>
-			</p>
+
+			<p><%= business.get('num_reviews') %> reviews</p>
+
+
+
+			<% } else { %>
+				<p>No reviews!</p>
+			<% } %>
 	</div>
 

@@ -1,7 +1,29 @@
 
 	<div class="business-show">
 		<h1 class="text-center"><%= business.get('name') %></h1>
-		<h4 class="text-center"><%= business.get('average_review') %>, <%= business.get('num_reviews') %> reviews</h4>
+
+		<h4 class="text-center">
+			<% if(business.get('average_review')) { %>
+				<% if(business.get('average_review') > 4.5) { %>
+					<img class="star-review-image" src="/assets/5stars.png">
+				<% } else if (business.get('average_review') > 3.5) { %>
+					<img class="star-review-image" src="/assets/4stars.png">
+				<% } else if (business.get('average_review') > 2.5) { %>
+					<img class="star-review-image" src="/assets/3stars.png">
+				<% } else if (business.get('average_review') > 1.5) { %>
+					<img class="star-review-image" src="/assets/2stars.png">
+				<% } else { %>
+					<img class="star-review-image" src="/assets/1star.png">
+				<% } %>
+
+				<p class="text-center"><%= business.get('num_reviews') %> reviews</p>
+
+
+
+			<% } else { %>
+				<p claas="text-center">No reviews!</p>
+			<% } %>
+		</h4>
 
 		<% if(business.get('name')) { %>
 			<div class="header-container">
