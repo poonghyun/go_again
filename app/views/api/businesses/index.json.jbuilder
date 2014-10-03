@@ -12,4 +12,8 @@ json.array! @businesses do |business|
 		json.extract! review, :id, :business_id, :content, :stars, :created_at, :updated_at, :go_again
 		json.user review.user
 	end
+
+	json.photos business.photos do |photo|
+		json.extract! photo, :id, :fp_url, :review_id
+	end
 end

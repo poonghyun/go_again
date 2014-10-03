@@ -416,7 +416,7 @@ form.business-search {
 }
 
 .business-reviews-container {
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 	margin-top: 20px;
 	border: thin solid black;
@@ -464,7 +464,7 @@ form.business-search {
 }
 
 .get-more-reviews {
-	display: inline-block;
+	display: block;
 	padding: 2px;
 	margin-bottom: 5px;
 }
@@ -476,30 +476,51 @@ form.business-search {
 
 .business-preview-list {
 	width: 90%;
+	min-width: 600px;
 	margin: 0 auto;
 }
 
 .preview-container {
-	position: relative;
-	width: 45%;
-	margin-left: 5%;
-	border: thin solid black;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	width: 50%;
 }
 
 .preview-link:hover {
-	background-color: pink;
+	background-color: lightblue;
 	opacity: 0.3;
 }
 
+.pc-inner {
+	margin: 10px;
+	border: thin solid lightgray;
+	height: 250px;
+}
+
 .star-review-image {
-	display: block;
 	height: 16px !important;
 	width: 90px !important;
+}
+
+.star-map {
 	margin: 0 auto;
+	display: block;
 }
 
 .add-pictures {
 	float: right;
+}
+
+.rr-header {
+	margin-right: -10%;
+}
+
+.cat-photo-list {
+}
+
+.cat-header-photos {
+	float: left;
+	height: 248px;
+}
+
+.cat-description {
+	text-align: center;
 }

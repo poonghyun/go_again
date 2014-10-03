@@ -19,15 +19,15 @@
 
 		<% if(business.get('average_review')) { %>
 			<% if(business.get('average_review') > 4.5) { %>
-				<img class="star-review-image" src="/assets/5stars.png">
+				<img class="star-review-image star-map" src="/assets/5stars.png">
 			<% } else if (business.get('average_review') > 3.5) { %>
-				<img class="star-review-image" src="/assets/4stars.png">
+				<img class="star-review-image star-map" src="/assets/4stars.png">
 			<% } else if (business.get('average_review') > 2.5) { %>
-				<img class="star-review-image" src="/assets/3stars.png">
+				<img class="star-review-image star-map" src="/assets/3stars.png">
 			<% } else if (business.get('average_review') > 1.5) { %>
-				<img class="star-review-image" src="/assets/2stars.png">
+				<img class="star-review-image star-map" src="/assets/2stars.png">
 			<% } else { %>
-				<img class="star-review-image" src="/assets/1star.png">
+				<img class="star-review-image star-map" src="/assets/1star.png">
 			<% } %>
 
 			<p><%= business.get('num_reviews') %> reviews</p>

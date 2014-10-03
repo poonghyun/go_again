@@ -1,12 +1,45 @@
 
-	<div class="preview-container">
+	<div class="preview-container col-xs-6">
+		<div class="pc-inner">
+
+	<div class="cat-photo-list">
+		<% if(business.photos().length) { %>
+			<img class="cat-header-photos" src="<%= business.photos().at(business.photos().length - 1).get('fp_url') %>">
+		<% } else { %>
+			<img class="cat-header-photos" src="/assets/building-avatar.gif">
+		<% } %>
+	</div>
+
+	<div class="cat-description">
+		
 		<h3><%= business.get('name') %></h3>
 
-		<p>Rated <%= business.get('average_review') %> out of 5, with <%= business.get('num_reviews') %> total reviews</p>
+		<% if(business.get('average_review')) { %>
+			<% if(business.get('average_review') > 4.5) { %>
+				<img class="star-review-image" src="/assets/5stars.png">
+			<% } else if (business.get('average_review') > 3.5) { %>
+				<img class="star-review-image" src="/assets/4stars.png">
+			<% } else if (business.get('average_review') > 2.5) { %>
+				<img class="star-review-image" src="/assets/3stars.png">
+			<% } else if (business.get('average_review') > 1.5) { %>
+				<img class="star-review-image" src="/assets/2stars.png">
+			<% } else { %>
+				<img class="star-review-image" src="/assets/1star.png">
+			<% } %>
+
+			<p><%= business.get('num_reviews') %> reviews</p>
+
+
+
+			<% } else { %>
+				<p>No reviews!</p>
+			<% } %>
 
 		<p>Price: <% for(var i = 0; i < business.get('price'); i++) { %>
 		 <%= "$" %>
-		<% }; %></p>
+		<% } %></p>
 
-		<a href="#/business/<%= business.id %>"><span class="link-span preview-link"></span></a>
+		<!-- <a href="#/business/<%= business.id %>"><span class="link-span preview-link"></span></a> -->
 	</div>
+	</div>
+</div>
