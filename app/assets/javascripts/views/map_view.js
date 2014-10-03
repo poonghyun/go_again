@@ -2,7 +2,8 @@ GoAgain.Views.MapView = Backbone.View.extend({
 	template: JST['map_view'],
 
 	initialize: function (options) {
-		this.listenTo(this.collection, "sync", this.addAndBind);
+		var mView = this;
+		this.listenTo(this.collection, "sync", _.debounce(mView.addAndBind, 100));
 
 	  this.mapOptions = {
 	    zoom: 15,
@@ -27,7 +28,13 @@ GoAgain.Views.MapView = Backbone.View.extend({
 		return this;
 	},
 
+	// debouncedRender: function() {
+	// 	var view = this;
+	// 	return _.debounce(view.render, 100);
+	// },
+
 	addAndBind: function () {
+		debugger;
 		google.maps.event.trigger(this.map, "resize");
 
 		setTimeout(function() {
@@ -40,7 +47,7 @@ GoAgain.Views.MapView = Backbone.View.extend({
 
 	// debouncedAddBind: function () {
 	// 	var view = this;
-	// 	return _.debounce(view.addAndBind, 100);
+	// 	_.debounce(view.addAndBind, 100)();
 	// },
 
 	bindListeners: function() {
