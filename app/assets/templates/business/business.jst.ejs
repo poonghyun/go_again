@@ -1,6 +1,7 @@
 
 	<div class="business-show">
 		<h1 class="text-center"><%= business.get('name') %></h1>
+		<h4 class="text-center"><%= business.get('average_review') %>, <%= business.get('num_reviews') %> reviews</h4>
 
 		<% if(business.get('name')) { %>
 			<div class="header-container">

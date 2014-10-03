@@ -3,6 +3,11 @@ if @closest
 		json.extract!(@closest, :id, :name, :b_type, :created_at, :updated_at, :price, :x_coord, :y_coord)
 		json.average_review @closest.average_review
 		json.num_reviews @closest.reviews.count
+		json.photos @closest.photos do |photo|
+			json.id photo.id
+			json.fp_url photo.fp_url
+			json.review_id = photo.review_id
+		end
 	end
 end
 

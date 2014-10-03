@@ -34,6 +34,12 @@ GoAgain.Collections.Businesses = Backbone.Collection.extend({
 	parse: function(response) {
 		if(response.closest) {
 			this.getActive().set(response.closest)
+			// this.getActive().photos = response.closest.photos;
+
+			if(response.closest.photos) {
+				this.getActive().photos().set(response.closest.photos);
+			}
+
 			delete response.closest;
 		}
 

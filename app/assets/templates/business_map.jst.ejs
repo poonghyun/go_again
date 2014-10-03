@@ -1,15 +1,25 @@
 
+
+	<div class="business-map-photo-list">
+		<% if(business.photos().length) { %>
+			<img class="bm-header-photos" src="<%= business.photos().at(business.photos().length - 1).get('fp_url') %>">
+		<% } else { %>
+			<img class="bm-header-photos" src="/assets/building-avatar.gif">
+		<% } %>
+	</div>
+	
 	<h3><a href="#/business/<%= business.id %>"><%= business.get('name') %></a></h3>
 
-	<p><a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
+	<div class="bb-sub">
+		<p><% for(var i = 0; i < business.get('price'); i++) { %>
+		 <%= "$" %>
+		<% }; %> — <a href="#/cat/<%= business.get('b_type').replace(/ /g,'') %>"><%= business.get('b_type') %></a></p>
 
-	<p>Price: <% for(var i = 0; i < business.get('price'); i++) { %>
-	 <%= "$" %>
-	<% }; %></p>
+		<p><% if(business.get('average_review')) { %>
+			Average Rating: <%= business.get('average_review') %>, <%= business.get('num_reviews') %> reviews
+			<% } else { %>
+				No reviews!
+			<% } %>
+			</p>
+	</div>
 
-	<p>Average Review: <% if(business.get('average_review')) { %>
-		<%= business.get('average_review') %>
-		<% } else { %>
-			No reviews!
-		<% } %>
-		</p>
